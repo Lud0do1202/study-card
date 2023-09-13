@@ -13,10 +13,11 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { LogoShrinkingComponent } from './components/logo-shrinking/logo-shrinking.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { TitleComponent } from './components/title/title.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent],
+  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
   bootstrap: [AppComponent],

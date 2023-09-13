@@ -1,3 +1,6 @@
+/* --------------------------------- Import --------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
+
 /* ----------------------------------- Var ---------------------------------- */
 :root {
   --light-color: #fff;
@@ -10,6 +13,52 @@
   --on-dark-color: #fff;
   --on-accent-color: #fff;
   --on-background-color: #fff;
+
+  --font-family: "Cabin Sketch", cursive;
+}
+
+/* ------------------------------ Media Queries ----------------------------- */
+// Mobile S (<= 320px)
+@media screen and (max-width: 400px) {
+  :root {
+    --font-xs: 0.55em;
+    --font-s: 0.8em;
+    --font-m: 1.05em;
+    --font-l: 1.5em;
+    --font-xl: 1.95em;
+    --font-xxl: 2.7em;
+    --font-xxxl: 3.4em;
+  }
+}
+
+// Mobile L (<= 425px)
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  :root {
+    --font-xs: 0.75em;
+    --font-s: 1em;
+    --font-m: 1.25em;
+    --font-l: 1.75em;
+    --font-xl: 2.25em;
+    --font-xxl: 3em;
+    --font-xxxl: 3.75em;
+  }
+}
+
+// Tablet S (<= 768px)
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  :root {
+    --font-xs: 0.9em;
+    --font-s: 1.25em;
+    --font-m: 1.55em;
+    --font-l: 2em;
+    --font-xl: 2.6em;
+    --font-xxl: 3.4em;
+    --font-xxxl: 4em;
+  }
+}
+
+// Tablet L (> 768px)
+@media screen and (min-width: 800px) {
 }
 
 /* ---------------------------------- Body ---------------------------------- */
@@ -21,4 +70,28 @@ body {
   // Default color
   background-color: var(--background-color);
   color: var(--on-background-color);
+
+  // Default typo
+  font-size: var(--font-m);
+  font-family: var(--font-family);
+}
+
+/* ---------------------------------- Pages --------------------------------- */
+.page {
+height: 100%;
+
+  // Header
+  .header {
+    height: 15%;
+  }
+
+  // Body
+  .body {
+    height: 70%;
+  }
+
+  // Footer
+  .footer {
+    height: 15%;
+  }
 }
