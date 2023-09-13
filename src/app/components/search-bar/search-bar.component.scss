@@ -1,0 +1,44 @@
+.search-bar {
+  width: fit-content;
+  border: 1px solid var(--normal-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-m);
+
+  // Icon
+  .search-icon {
+    background-color: transparent;
+    border: none;
+
+    svg {
+      font-size: var(--font-m);
+      width: 1em;
+      height: 1em;
+      margin-left: 0.4em;
+      
+      path {
+        fill: var(--normal-color);
+      }
+    }
+  }
+
+  // Field
+  .search-field {
+    background-color: transparent;
+    border: none;
+
+    padding: 0.2em;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // Focused
+  &:focus-within {
+    outline: 2px solid var(--dark-color);
+
+    .search-icon svg path {
+      fill: var(--dark-color);
+    }
+  }
+}

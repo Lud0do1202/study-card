@@ -1,11 +1,21 @@
 <div class="home-page page">
   <!-- ------------------------------- Header -------------------------------- -->
   <div class="header">
-    <app-title text="STUDY SHEET"></app-title>
+    <app-title text="STUDY CARD"></app-title>
   </div>
 
   <!-- ------------------------------- Body -------------------------------- -->
-  <div class="body"></div>
+  <div class="body">
+    <app-search-bar class="search-bar" (onChange)="filterTopics($event)"></app-search-bar>
+
+    <div *ngFor="let topic of topicsFiltered">
+      <p>ID : {{ topic.id }}</p>
+      <p>TOPIC : {{ topic.topic }}</p>
+      <p>COLOR : {{ topic.color }}</p>
+      <p>MASTERED : {{ topic.mastered }}</p>
+      <br />
+    </div>
+  </div>
 
   <!-- ------------------------------ Footer ------------------------------- -->
   <div class="footer"></div>

@@ -15,6 +15,8 @@
   --on-background-color: #fff;
 
   --font-family: "Cabin Sketch", cursive;
+
+  --border-radius: 0.2em;
 }
 
 /* ------------------------------ Media Queries ----------------------------- */
@@ -59,6 +61,15 @@
 
 // Tablet L (> 768px)
 @media screen and (min-width: 800px) {
+  :root {
+    --font-xs: 1em;
+    --font-s: 1.35em;
+    --font-m: 1.7em;
+    --font-l: 2.15em;
+    --font-xl: 2.8em;
+    --font-xxl: 3.6em;
+    --font-xxxl: 4.25em;
+  }
 }
 
 /* ---------------------------------- Body ---------------------------------- */
@@ -78,7 +89,7 @@ body {
 
 /* ---------------------------------- Pages --------------------------------- */
 .page {
-height: 100%;
+  height: 100%;
 
   // Header
   .header {

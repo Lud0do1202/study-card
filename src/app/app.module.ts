@@ -14,10 +14,12 @@ import { LogoShrinkingComponent } from './components/logo-shrinking/logo-shrinki
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { TitleComponent } from './components/title/title.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent],
+  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
   bootstrap: [AppComponent],
