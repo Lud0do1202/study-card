@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="color-rect light">light</div>
+  <div class="color-rect normal">normal</div>
+  <div class="color-rect accent">accent</div>
+  <div class="color-rect dark">dark</div>
+  <div class="color-rect background">background</div>
+</div>
+
+<div style="height: 50px"></div>
+
+<ngx-colors
+  ngx-colors-trigger
+  ngx-colors
+  [palette]="palette"
+  [(ngModel)]="color"
+  (change)="updateTheme()"
+  colorsAnimation="popup"
+></ngx-colors>
+
+<div> {{id}} </div>

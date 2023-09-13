@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* ----------------------------------- Var ---------------------------------- */
+:root {
+  --light-color: #fff;
+  --normal-color: #fff;
+  --dark-color: #fff;
+  --accent-color: #fff;
+  --background-color: #fff;
+  --on-light-color: #fff;
+  --on-normal-color: #fff;
+  --on-dark-color: #fff;
+  --on-accent-color: #fff;
+  --on-background-color: #fff;
+}
+
+/* ---------------------------------- Body ---------------------------------- */
+body {
+  // RESET
+  margin: 0;
+  height: 100vh;
+
+  // Default color
+  background-color: var(--background-color);
+  color: var(--on-background-color);
+}
