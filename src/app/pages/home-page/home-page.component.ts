@@ -21,13 +21,61 @@ export class HomePageComponent implements OnInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     // Get the topics
-    this.$topic$.getAll().subscribe({
-      next: (topics: Topic[]) => {
-        this.topics = topics;
-        this.topicsFiltered = topics;
+    // this.$topic$.getAll().subscribe({
+    //   next: (topics: Topic[]) => {
+    //     this.topics = topics;
+    //     this.topicsFiltered = topics;
+    //   },
+    //   error: () => this.router.error(),
+    // });
+    this.topics = [
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
       },
-      error: () => this.router.error(),
-    });
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+      {
+        id: '1',
+        topic: 'Angular',
+        color: '#e91e63',
+      },
+    ];
+    this.topicsFiltered = this.topics;
   }
 
   /* ----------------------------- Filter Topics ---------------------------- */
@@ -43,5 +91,10 @@ export class HomePageComponent implements OnInit {
       // Filter it
       return pureProp.includes(pureSearch);
     });
+  }
+
+  /* -------------------------- Show Add Topic Form ------------------------- */
+  showAddTopicForm(): void {
+    console.log('showAddTopicForm');
   }
 }

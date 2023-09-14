@@ -20,6 +20,7 @@ import { TopicListComponent } from './components/topic-list/topic-list.component
 import { TopicComponent } from './components/topic/topic.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
+import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -36,6 +37,7 @@ import { TopicPageComponent } from './pages/topic-page/topic-page.component';
     TopicComponent,
     ColorPickerComponent,
     TopicPageComponent,
+    ButtonIconComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
