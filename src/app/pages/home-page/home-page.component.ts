@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
+import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-home-page',
@@ -14,28 +16,18 @@ export class HomePageComponent implements OnInit {
   topicsFiltered!: Topic[];
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private removeAccent: RemoveAccentsPipe) {}
+  constructor(private router: Router, private $topic$: TopicService, private removeAccent: RemoveAccentsPipe) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
-    this.topics = [
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#FF3333',
+    // Get the topics
+    this.$topic$.getAll().subscribe({
+      next: (topics: Topic[]) => {
+        this.topics = topics;
+        this.topicsFiltered = topics;
       },
-      {
-        id: '2',
-        topic: 'Réseaux',
-        color: '#4CAF50',
-      },
-      {
-        id: '3',
-        topic: 'Droit',
-        color: '#3F51B5',
-      },
-    ];
-    this.topicsFiltered = this.topics;
+      error: () => this.router.navigateByUrl('/error'),
+    });
   }
 
   /* ----------------------------- Filter Topics ---------------------------- */

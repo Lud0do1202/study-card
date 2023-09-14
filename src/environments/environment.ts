@@ -5,6 +5,7 @@ const imagesFolder = assetsFolder + '/images';
 export const environment = {
   api: {
     auth: api + '/auth.php',
+    topic: api + '/topic.php',
   },
   assets: {
     images: {
