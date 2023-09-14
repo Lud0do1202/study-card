@@ -9,7 +9,7 @@
   <app-color-picker [theme]="theme" (onChangeColor)="onChangeColor($event)"></app-color-picker>
 
   <!-- ------------------------------- Name -------------------------------- -->
-  <div class="topic-name">{{ topic.topic }}</div>
+  <div class="topic-name" (click)="goToTopicPage()">{{ topic.topic }}</div>
 
   <!-- ------------------------------- Play -------------------------------- -->
   <div class="play-btn"><i class="bi bi-play"></i></div>

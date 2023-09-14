@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
+import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
   topicsFiltered!: Topic[];
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private router: Router, private $topic$: TopicService, private removeAccent: RemoveAccentsPipe) {}
+  constructor(private router: RouterService, private $topic$: TopicService, private removeAccent: RemoveAccentsPipe) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit {
         this.topics = topics;
         this.topicsFiltered = topics;
       },
-      error: () => this.router.navigateByUrl('/error'),
+      error: () => this.router.error(),
     });
   }
 

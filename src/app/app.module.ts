@@ -1,5 +1,5 @@
 /* --------------------------------- Module --------------------------------- */
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,10 +19,24 @@ import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { TopicComponent } from './components/topic/topic.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe, TopicListComponent, TopicComponent, ColorPickerComponent],
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    LogoShrinkingComponent,
+    HomePageComponent,
+    ErrorPageComponent,
+    TitleComponent,
+    SearchBarComponent,
+    RemoveAccentsPipe,
+    TopicListComponent,
+    TopicComponent,
+    ColorPickerComponent,
+    TopicPageComponent,
+  ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
   bootstrap: [AppComponent],

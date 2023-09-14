@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Theme } from 'src/app/interfaces/theme';
 import { Topic } from 'src/app/interfaces/topic';
+import { RouterService } from 'src/app/services/router.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { TopicService } from 'src/app/services/topic.service';
 
@@ -21,7 +21,7 @@ export class TopicComponent implements OnInit {
   theme!: Theme;
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private $theme$: ThemeService, private $topic$: TopicService, private router: Router) {}
+  constructor(private $theme$: ThemeService, private $topic$: TopicService, private router: RouterService) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
@@ -39,10 +39,15 @@ export class TopicComponent implements OnInit {
 
     // Update the DB
     this.$topic$.update(this.topic).subscribe({
-      error: () => this.router.navigateByUrl('/error'),
+      error: () => this.router.error(),
     });
 
     // Update the theme of the topic color
     this.theme = this.$theme$.getTheme(this.topic.color);
+  }
+
+  /* -------------------------------- Router -------------------------------- */
+  goToTopicPage(): void {
+    this.router.navigate('/topic', this.topic);
   }
 }

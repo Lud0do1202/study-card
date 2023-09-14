@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,12 +10,8 @@ export class SearchBarComponent<T> {
   @Output() onChange = new EventEmitter<string>();
   search: string = '';
 
-  /* ------------------------------ Constructor ----------------------------- */
-  constructor(private removeAccent: RemoveAccentsPipe) {}
-
   /* ----------------------------- Filter Items ----------------------------- */
   emitOnChange(): void {
-    // Emit the filtered items
     this.onChange.emit(this.search);
   }
 }

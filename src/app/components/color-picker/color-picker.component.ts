@@ -19,7 +19,10 @@ export class ColorPickerComponent implements OnInit {
 
   /* ---------------------------------- Init ---------------------------------- */
   ngOnInit(): void {
+    // Palette
     this.palette = this.$theme$.palette;
+
+    // Theme
     this.theme = this.theme ?? this.$theme$.getTheme(this.$theme$.defaultColor);
     this.color = this.theme.normal;
   }
