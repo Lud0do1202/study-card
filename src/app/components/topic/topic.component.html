@@ -6,15 +6,7 @@
 }"
 >
   <!-- ------------------------------ Color ------------------------------ -->
-  <ngx-colors
-    class="color-picker"
-    ngx-colors-trigger
-    ngx-colors
-    [palette]="palette"
-    [(ngModel)]="topic.color"
-    (change)="onChangeColor()"
-    colorsAnimation="popup"
-  ></ngx-colors>
+  <app-color-picker [theme]="theme" (onChangeColor)="onChangeColor($event)"></app-color-picker>
 
   <!-- ------------------------------- Name -------------------------------- -->
   <div class="topic-name">{{ topic.topic }}</div>

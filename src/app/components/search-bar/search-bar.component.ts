@@ -15,7 +15,7 @@ export class SearchBarComponent<T> {
   constructor(private removeAccent: RemoveAccentsPipe) {}
 
   /* ----------------------------- Filter Items ----------------------------- */
-  onChangeDispatch(): void {
+  emitOnChange(): void {
     // Emit the filtered items
     this.onChange.emit(this.search);
   }

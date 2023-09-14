@@ -33,7 +33,10 @@ export class TopicComponent implements OnInit {
   }
 
   /* ------------------------------ Change Color ------------------------------ */
-  onChangeColor(): void {
+  onChangeColor(color: string): void {
+    // Update local topic
+    this.topic.color = color;
+
     // Update the DB
     this.$topic$.update(this.topic).subscribe({
       error: () => this.router.navigateByUrl('/error'),

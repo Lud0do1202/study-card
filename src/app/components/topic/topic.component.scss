@@ -5,21 +5,6 @@
   margin: 0.75em 0;
   font-size: var(--font-l);
 
-  /* --------------------------------- Color -------------------------------- */
-  .color-picker {
-    ::ng-deep .app-color-picker {
-      .preview {
-        background: var(--topic-background-color);
-        padding: 0.1em;
-
-        .circle {
-          width: 0.9em !important;
-          height: 0.9em !important;
-        }
-      }
-    }
-  }
-
   /* --------------------------------- Topic -------------------------------- */
   .topic-name {
     width: 70%;

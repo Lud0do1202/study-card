@@ -18,10 +18,11 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { TopicComponent } from './components/topic/topic.component';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe, TopicListComponent, TopicComponent],
+  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe, TopicListComponent, TopicComponent, ColorPickerComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
   bootstrap: [AppComponent],
