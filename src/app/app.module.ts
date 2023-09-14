@@ -16,10 +16,12 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { TitleComponent } from './components/title/title.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
+import { TopicListComponent } from './components/topic-list/topic-list.component';
+import { TopicComponent } from './components/topic/topic.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe],
+  declarations: [AppComponent, LandingPageComponent, LogoShrinkingComponent, HomePageComponent, ErrorPageComponent, TitleComponent, SearchBarComponent, RemoveAccentsPipe, TopicListComponent, TopicComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
   bootstrap: [AppComponent],

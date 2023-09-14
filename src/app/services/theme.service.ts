@@ -27,8 +27,7 @@ export class ThemeService {
   /* --------------------------------- Theme --------------------------------- */
   setTheme(basedColor: string): void {
     // Get the theme
-    const color = Color(basedColor);
-    const theme = this.getTheme(color);
+    const theme = this.getTheme(basedColor);
 
     // Set the var
     document.documentElement.style.setProperty('--light-color', theme.light);
@@ -44,7 +43,10 @@ export class ThemeService {
   }
 
   /* ------------------------------- Get Theme ------------------------------ */
-  private getTheme(color: Color) {
+  getTheme(basedColor: string) {
+    // Get Color
+    const color = Color(basedColor);
+
     // Text color
     const blackText = '#212121';
     const whiteText = '#ffffff';

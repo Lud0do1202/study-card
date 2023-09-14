@@ -22,20 +22,17 @@ export class HomePageComponent implements OnInit {
       {
         id: '1',
         topic: 'Angular',
-        color: '#f00',
-        mastered: true,
+        color: '#FF3333',
       },
       {
         id: '2',
         topic: 'Réseaux',
-        color: '#0f0',
-        mastered: false,
+        color: '#4CAF50',
       },
       {
         id: '3',
         topic: 'Droit',
-        color: '#00f',
-        mastered: false,
+        color: '#3F51B5',
       },
     ];
     this.topicsFiltered = this.topics;

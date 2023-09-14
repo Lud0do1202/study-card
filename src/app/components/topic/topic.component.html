@@ -1,0 +1,24 @@
+<div
+  class="topic"
+  [ngStyle]="{
+    '--topic-background-color' : theme.background,
+    '--topic-color' : theme.normal,
+}"
+>
+  <!-- ------------------------------ Color ------------------------------ -->
+  <ngx-colors
+    class="color-picker"
+    ngx-colors-trigger
+    ngx-colors
+    [palette]="palette"
+    [(ngModel)]="color"
+    (change)="onChange()"
+    colorsAnimation="popup"
+  ></ngx-colors>
+
+  <!-- ------------------------------- Name -------------------------------- -->
+  <div class="topic-name">{{ topic.topic }}</div>
+
+  <!-- ------------------------------- Play -------------------------------- -->
+  <div class="play-btn"><i class="bi bi-play"></i></div>
+</div>

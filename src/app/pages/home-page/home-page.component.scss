@@ -5,41 +5,7 @@
   align-items: center;
 }
 
-
-
-
-.container {
-  display: flex;
-  width: 100%;
-}
-
-.color-rect {
-  flex-grow: 1;
-  height: 200px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-}
-
-.light {
-  background-color: var(--light-color);
-  color: var(--on-light-color);
-}
-.normal {
-  background-color: var(--normal-color);
-  color: var(--on-normal-color);
-}
-.dark {
-  background-color: var(--dark-color);
-  color: var(--on-dark-color);
-}
-.accent {
-  background-color: var(--accent-color);
-  color: var(--on-accent-color);
-}
-.background {
-  background-color: var(--background-color);
-  color: var(--on-background-color);
+.topic-list {
+  display: block;
+  height: 85%;
 }

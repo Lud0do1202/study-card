@@ -1,0 +1,43 @@
+.topic {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.75em 0;
+  font-size: var(--font-l);
+
+  /* --------------------------------- Color -------------------------------- */
+  .color-picker {
+    ::ng-deep .app-color-picker {
+      .preview {
+        background: var(--topic-background-color);
+        padding: 0.1em;
+
+        .circle {
+          width: 0.9em !important;
+          height: 0.9em !important;
+        }
+      }
+    }
+  }
+
+  /* --------------------------------- Topic -------------------------------- */
+  .topic-name {
+    width: 70%;
+    background-color: var(--topic-background-color);
+    color: var(--topic-color);
+    border: 2px solid var(--topic-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* --------------------------------- Play --------------------------------- */
+  .play-btn {
+    color: var(--topic-color);
+
+    i {
+      display: inline-block;
+      scale: 1.25;
+    }
+  }
+}

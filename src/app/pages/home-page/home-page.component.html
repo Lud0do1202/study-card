@@ -8,36 +8,9 @@
   <div class="body">
     <app-search-bar class="search-bar" (onChange)="filterTopics($event)"></app-search-bar>
 
-    <div *ngFor="let topic of topicsFiltered">
-      <p>ID : {{ topic.id }}</p>
-      <p>TOPIC : {{ topic.topic }}</p>
-      <p>COLOR : {{ topic.color }}</p>
-      <p>MASTERED : {{ topic.mastered }}</p>
-      <br />
-    </div>
+    <app-topic-list class="topic-list" [topics]="topicsFiltered"></app-topic-list>
   </div>
 
   <!-- ------------------------------ Footer ------------------------------- -->
   <div class="footer"></div>
 </div>
-
-<!-- <div class="container">
-  <div class="color-rect light">light</div>
-  <div class="color-rect normal">normal</div>
-  <div class="color-rect accent">accent</div>
-  <div class="color-rect dark">dark</div>
-  <div class="color-rect background">background</div>
-</div>
-
-<div style="height: 50px"></div>
-
-<ngx-colors
-  ngx-colors-trigger
-  ngx-colors
-  [palette]="palette"
-  [(ngModel)]="color"
-  (change)="updateTheme()"
-  colorsAnimation="popup"
-></ngx-colors>
-
-<div> {{id}} </div> -->
