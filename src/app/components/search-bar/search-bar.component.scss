@@ -2,13 +2,15 @@
   border: 1px solid var(--normal-color);
   border-radius: var(--border-radius);
   font-size: var(--font-m);
+  flex-wrap: nowrap;
 
   // Icon
   .search-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10%;
+    flex-grow: 1;
+    padding: 0.2em .5em;
     background-color: transparent;
     border: none;
 
@@ -25,11 +27,11 @@
 
   // Field
   .search-field {
-    width: 90%;
     background-color: transparent;
     border: none;
-
     padding: 0.2em;
+    flex-grow: 9;
+    overflow-x: hidden;
 
     &:focus {
       outline: none;
