@@ -9,20 +9,16 @@ export class ThemeService {
   palette: string[] = [
     this.getPrimaryColor('red-theme'), // Red
     this.getPrimaryColor('pink-theme'), // Pink
-    // '#9C27B0', // Purple
-    // '#673AB7', // Indigo
-    // '#3F51B5', // Blue
-    // '#03A9F4', // Light Blue
-    // '#00BCD4', // Turquoise
-    // '#4CAF50', // Green
-    // '#8BC34A', // Light Green
-    // '#FFD700', // Gold
-    // '#FF9800', // Orangegold
-    // '#FF5722', // Orange
-    // '#9E9E9E', // Gray
-    // '#607D8B', // Steel Blue
+    this.getPrimaryColor('purple-theme'), // Purple
+    this.getPrimaryColor('blue-theme'), // Blue
+    this.getPrimaryColor('light-blue-theme'), // Light blue
+    this.getPrimaryColor('green-theme'), // Green
+    this.getPrimaryColor('light-green-theme'), // Light green
+    this.getPrimaryColor('yellow-theme'), // Yellow
+    this.getPrimaryColor('orange-theme'), // Orange
+    this.getPrimaryColor('deep-orange-theme'), // Deep orange
   ];
-  defaultColor: string = this.palette[1];
+  defaultColor: string = this.getPrimaryColor('pink-theme'); // Default = pink
 
   /* ------------------------------- Get Theme ------------------------------- */
   getTheme(color: string): Theme | undefined {
@@ -35,6 +31,38 @@ export class ThemeService {
       // Pink
       case this.palette[1]:
         return 'pink-theme';
+
+      // Purple
+      case this.palette[2]:
+        return 'purple-theme';
+
+      // Blue
+      case this.palette[3]:
+        return 'blue-theme';
+
+      // Light blue
+      case this.palette[4]:
+        return 'light-blue-theme';
+
+      // Green
+      case this.palette[5]:
+        return 'green-theme';
+
+      // Light green
+      case this.palette[6]:
+        return 'light-green-theme';
+
+      // Yellow
+      case this.palette[7]:
+        return 'yellow-theme';
+
+      // Orange
+      case this.palette[8]:
+        return 'orange-theme';
+
+      // Deep orange
+      case this.palette[9]:
+        return 'deep-orange-theme';
 
       // Undefined
       default:
@@ -52,6 +80,38 @@ export class ThemeService {
       // Pink
       case 'pink-theme':
         return '#bc004b';
+
+      // Purple
+      case 'purple-theme':
+        return '#9a25ae';
+
+      // Blue
+      case 'blue-theme':
+        return '#006493';
+
+      // Light blue
+      case 'light-blue-theme':
+        return '#006876';
+
+      // Green
+      case 'green-theme':
+        return '#006e1c';
+
+      // Light green
+      case 'light-green-theme':
+        return '#3e6a00';
+
+      // Yellow
+      case 'yellow-theme':
+        return '#705d00';
+
+      // Orange
+      case 'orange-theme':
+        return '#8b5000';
+
+      // Deep orange
+      case 'deep-orange-theme':
+        return '#b02f00';
 
       // Undefined --> Never happen
       default:

@@ -1,0 +1,339 @@
+// Red
+.red-theme {
+  --primary-color: #c00015;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffdad6;
+  --onPrimaryContainer-color: #410002;
+  --secondary-color: #775653;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #ffdad6;
+  --onSecondaryContainer-color: #2c1513;
+  --tertiary-color: #715b2e;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #fedfa6;
+  --onTertiaryContainer-color: #261900;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #201a19;
+  --surface-color: #fffbff;
+  --onSurface-color: #201a19;
+  --surfaceVariant-color: #f5dddb;
+  --onSurfaceVariant-color: #534341;
+  --outline-color: #857371;
+  --onInverseSurface-color: #fbeeec;
+  --inverseSurface-color: #362f2e;
+  --inversePrimary-color: #ffb4ac;
+  --shadow-color: #000000;
+  --surfaceTint-color: #c00015;
+  --outlineVariant-color: #d8c2bf;
+  --scrim-color: #000000;
+}
+
+// Pink
+.pink-theme {
+  --primary-color: #bc004b;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffd9de;
+  --onPrimaryContainer-color: #400014;
+  --secondary-color: #75565b;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #ffd9de;
+  --onSecondaryContainer-color: #2c1519;
+  --tertiary-color: #795831;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #ffddba;
+  --onTertiaryContainer-color: #2b1700;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #201a1b;
+  --surface-color: #fffbff;
+  --onSurface-color: #201a1b;
+  --surfaceVariant-color: #f3dddf;
+  --onSurfaceVariant-color: #524345;
+  --outline-color: #847375;
+  --onInverseSurface-color: #fbeeee;
+  --inverseSurface-color: #362f2f;
+  --inversePrimary-color: #ffb2be;
+  --shadow-color: #000000;
+  --surfaceTint-color: #bc004b;
+  --outlineVariant-color: #d6c2c3;
+  --scrim-color: #000000;
+}
+
+// Purple
+.purple-theme {
+  --primary-color: #9a25ae;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffd6fe;
+  --onPrimaryContainer-color: #35003f;
+  --secondary-color: #6b586b;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #f4dbf1;
+  --onSecondaryContainer-color: #251626;
+  --tertiary-color: #82524a;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #ffdad4;
+  --onTertiaryContainer-color: #33110c;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #1e1a1d;
+  --surface-color: #fffbff;
+  --onSurface-color: #1e1a1d;
+  --surfaceVariant-color: #ecdfe8;
+  --onSurfaceVariant-color: #4d444c;
+  --outline-color: #7f747d;
+  --onInverseSurface-color: #f7eef3;
+  --inverseSurface-color: #332f32;
+  --inversePrimary-color: #f9abff;
+  --shadow-color: #000000;
+  --surfaceTint-color: #9a25ae;
+  --outlineVariant-color: #d0c3cc;
+  --scrim-color: #000000;
+}
+
+// Blue
+.blue-theme {
+  --primary-color: #006493;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #cae6ff;
+  --onPrimaryContainer-color: #001e30;
+  --secondary-color: #50606e;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #d3e5f5;
+  --onSecondaryContainer-color: #0c1d29;
+  --tertiary-color: #65587b;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #ebddff;
+  --onTertiaryContainer-color: #201634;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fcfcff;
+  --onBackground-color: #1a1c1e;
+  --surface-color: #fcfcff;
+  --onSurface-color: #1a1c1e;
+  --surfaceVariant-color: #dde3ea;
+  --onSurfaceVariant-color: #41474d;
+  --outline-color: #72787e;
+  --onInverseSurface-color: #f0f0f3;
+  --inverseSurface-color: #2e3133;
+  --inversePrimary-color: #8dcdff;
+  --shadow-color: #000000;
+  --surfaceTint-color: #006493;
+  --outlineVariant-color: #c1c7ce;
+  --scrim-color: #000000;
+}
+
+// Light blue
+.light-blue-theme {
+  --primary-color: #006876;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #a1efff;
+  --onPrimaryContainer-color: #001f25;
+  --secondary-color: #4a6268;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #cde7ed;
+  --onSecondaryContainer-color: #051f23;
+  --tertiary-color: #545d7e;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #dbe1ff;
+  --onTertiaryContainer-color: #101a37;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fbfcfd;
+  --onBackground-color: #191c1d;
+  --surface-color: #fbfcfd;
+  --onSurface-color: #191c1d;
+  --surfaceVariant-color: #dbe4e6;
+  --onSurfaceVariant-color: #3f484a;
+  --outline-color: #6f797b;
+  --onInverseSurface-color: #eff1f2;
+  --inverseSurface-color: #2e3132;
+  --inversePrimary-color: #44d8f1;
+  --shadow-color: #000000;
+  --surfaceTint-color: #006876;
+  --outlineVariant-color: #bfc8ca;
+  --scrim-color: #000000;
+}
+
+// Green
+.green-theme {
+  --primary-color: #006e1c;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #94f990;
+  --onPrimaryContainer-color: #002204;
+  --secondary-color: #52634f;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #d5e8cf;
+  --onSecondaryContainer-color: #111f0f;
+  --tertiary-color: #38656a;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #bcebf0;
+  --onTertiaryContainer-color: #002023;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fcfdf6;
+  --onBackground-color: #1a1c19;
+  --surface-color: #fcfdf6;
+  --onSurface-color: #1a1c19;
+  --surfaceVariant-color: #dee5d8;
+  --onSurfaceVariant-color: #424940;
+  --outline-color: #72796f;
+  --onInverseSurface-color: #f0f1eb;
+  --inverseSurface-color: #2f312d;
+  --inversePrimary-color: #78dc77;
+  --shadow-color: #000000;
+  --surfaceTint-color: #006e1c;
+  --outlineVariant-color: #c2c9bd;
+  --scrim-color: #000000;
+}
+
+// Light green
+.light-green-theme {
+  --primary-color: #3e6a00;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #b9f474;
+  --onPrimaryContainer-color: #0f2000;
+  --secondary-color: #576249;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #dbe7c8;
+  --onSecondaryContainer-color: #151e0b;
+  --tertiary-color: #386663;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #bbece8;
+  --onTertiaryContainer-color: #00201e;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fdfcf5;
+  --onBackground-color: #1b1c18;
+  --surface-color: #fdfcf5;
+  --onSurface-color: #1b1c18;
+  --surfaceVariant-color: #e1e4d5;
+  --onSurfaceVariant-color: #44483d;
+  --outline-color: #75796c;
+  --onInverseSurface-color: #f2f1e9;
+  --inverseSurface-color: #30312c;
+  --inversePrimary-color: #9ed75b;
+  --shadow-color: #000000;
+  --surfaceTint-color: #3e6a00;
+  --outlineVariant-color: #c5c8ba;
+  --scrim-color: #000000;
+}
+
+// Yellow
+.yellow-theme {
+  --primary-color: #705d00;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffe16d;
+  --onPrimaryContainer-color: #221b00;
+  --secondary-color: #675e40;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #efe2bc;
+  --onSecondaryContainer-color: #211b04;
+  --tertiary-color: #44664e;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #c6eccd;
+  --onTertiaryContainer-color: #00210e;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #1d1b16;
+  --surface-color: #fffbff;
+  --onSurface-color: #1d1b16;
+  --surfaceVariant-color: #eae2cf;
+  --onSurfaceVariant-color: #4b4739;
+  --outline-color: #7c7767;
+  --onInverseSurface-color: #f6f0e7;
+  --inverseSurface-color: #33302a;
+  --inversePrimary-color: #e9c400;
+  --shadow-color: #000000;
+  --surfaceTint-color: #705d00;
+  --outlineVariant-color: #cdc6b4;
+  --scrim-color: #000000;
+}
+
+// Orange
+.orange-theme {
+  --primary-color: #8b5000;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffdcbe;
+  --onPrimaryContainer-color: #2c1600;
+  --secondary-color: #725a42;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #ffdcbe;
+  --onSecondaryContainer-color: #291806;
+  --tertiary-color: #58633a;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #dce8b4;
+  --onTertiaryContainer-color: #161e01;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #201b16;
+  --surface-color: #fffbff;
+  --onSurface-color: #201b16;
+  --surfaceVariant-color: #f2dfd1;
+  --onSurfaceVariant-color: #51453a;
+  --outline-color: #837468;
+  --onInverseSurface-color: #faefe7;
+  --inverseSurface-color: #352f2b;
+  --inversePrimary-color: #ffb870;
+  --shadow-color: #000000;
+  --surfaceTint-color: #8b5000;
+  --outlineVariant-color: #d5c3b5;
+  --scrim-color: #000000;
+}
+
+// Deep orange
+.deep-orange-theme {
+  --primary-color: #b02f00;
+  --onPrimary-color: #ffffff;
+  --primaryContainer-color: #ffdbd1;
+  --onPrimaryContainer-color: #3b0900;
+  --secondary-color: #77574e;
+  --onSecondary-color: #ffffff;
+  --secondaryContainer-color: #ffdbd1;
+  --onSecondaryContainer-color: #2c150f;
+  --tertiary-color: #6c5d2f;
+  --onTertiary-color: #ffffff;
+  --tertiaryContainer-color: #f5e1a7;
+  --onTertiaryContainer-color: #231b00;
+  --error-color: #ba1a1a;
+  --errorContainer-color: #ffdad6;
+  --onError-color: #ffffff;
+  --onErrorContainer-color: #410002;
+  --background-color: #fffbff;
+  --onBackground-color: #201a18;
+  --surface-color: #fffbff;
+  --onSurface-color: #201a18;
+  --surfaceVariant-color: #f5ded8;
+  --onSurfaceVariant-color: #53433f;
+  --outline-color: #85736e;
+  --onInverseSurface-color: #fbeeeb;
+  --inverseSurface-color: #362f2d;
+  --inversePrimary-color: #ffb5a0;
+  --shadow-color: #000000;
+  --surfaceTint-color: #b02f00;
+  --outlineVariant-color: #d8c2bc;
+  --scrim-color: #000000;
+}

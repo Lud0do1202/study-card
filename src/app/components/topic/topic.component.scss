@@ -8,8 +8,8 @@
   /* --------------------------------- Topic -------------------------------- */
   .topic-name {
     width: 65%;
-    background-color: var(--color-primary);
-    color: var(--color-onPrimary);
+    background-color: var(--primary-color);
+    color: var(--onPrimary-color);
     border-radius: var(--border-radius);
     text-align: center;
     font-weight: bold;
@@ -17,11 +17,6 @@
 
   /* --------------------------------- Play --------------------------------- */
   .play-btn {
-    color: var(--color-primary);
-
-    i {
-      display: inline-block;
-      scale: 1;
-    }
+    color: var(--primary-color);
   }
 }
