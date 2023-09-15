@@ -22,6 +22,7 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
+import { SlidebarComponent } from './components/slidebar/slidebar.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -40,6 +41,7 @@ import { PlayPageComponent } from './pages/play-page/play-page.component';
     TopicPageComponent,
     ButtonIconComponent,
     PlayPageComponent,
+    SlidebarComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
