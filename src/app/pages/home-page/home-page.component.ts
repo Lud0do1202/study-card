@@ -13,10 +13,8 @@ import { TopicService } from 'src/app/services/topic.service';
 })
 export class HomePageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
-  @ViewChild('addTopicForm') addTopicFormSlidebar!: SlidebarComponent;
   topics!: Topic[];
   topicsFiltered!: Topic[];
-  showAddTopicForm: boolean = false;
 
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private router: RouterService, private $topic$: TopicService, private removeAccent: RemoveAccentsPipe) {}
@@ -45,6 +43,14 @@ export class HomePageComponent implements OnInit {
 
       // Filter it
       return pureProp.includes(pureSearch);
+    });
+  }
+
+  /* ------------------------------- New Topic ------------------------------ */
+  newTopic(): void {
+    this.$topic$.insert().subscribe({
+      next: (topic: Topic) => this.router.navigate('/edit-topic', topic),
+      error: () => this.router.error(),
     });
   }
 }

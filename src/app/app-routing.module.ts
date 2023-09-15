@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing' },
   { path: 'landing', component: LandingPageComponent },
   { path: 'home', component: HomePageComponent },
-  { path: 'topic', component: TopicPageComponent },
+  { path: 'edit-topic', component: TopicPageComponent },
   { path: 'play', component: PlayPageComponent },
   { path: 'error', component: ErrorPageComponent },
 ];

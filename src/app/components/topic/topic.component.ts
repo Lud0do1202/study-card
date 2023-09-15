@@ -11,11 +11,7 @@ import { Theme } from 'src/app/types/theme';
 })
 export class TopicComponent {
   /* ---------------------------------- Var --------------------------------- */
-  @Input() topic: Topic = {
-    id: 'ID',
-    topic: 'TOPIC',
-    theme: 'pink-theme',
-  };
+  @Input() topic!: Topic;
   theme!: Theme;
 
   /* ------------------------------ Constructor ----------------------------- */
@@ -40,6 +36,6 @@ export class TopicComponent {
 
   // Edit
   edit(): void {
-    this.router.navigate('/topic', this.topic);
+    this.router.navigate('/edit-topic', this.topic);
   }
 }
