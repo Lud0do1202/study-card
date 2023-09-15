@@ -3,8 +3,8 @@
   <app-color-picker [theme]="topic.theme" (onChangeColor)="onChangeColor($event)"></app-color-picker>
 
   <!-- ------------------------------- Name -------------------------------- -->
-  <div class="topic-name" (click)="goToTopicPage()">{{ topic.topic }}</div>
+  <div class="topic-name" (click)="play()">{{ topic.topic }}</div>
 
   <!-- ------------------------------- Play -------------------------------- -->
-  <div class="play-btn"><i class="bi bi-pen-fill"></i></div>
+  <div class="play-btn" (click)="edit()"><i class="bi bi-pen-fill"></i></div>
 </div>

@@ -33,7 +33,13 @@ export class TopicComponent {
   }
 
   /* -------------------------------- Router -------------------------------- */
-  goToTopicPage(): void {
+  // Play
+  play(): void {
+    this.router.navigate('/play', this.topic);
+  }
+
+  // Edit
+  edit(): void {
     this.router.navigate('/topic', this.topic);
   }
 }
