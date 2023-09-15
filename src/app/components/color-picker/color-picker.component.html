@@ -1,5 +1,5 @@
 <ngx-colors
-  [style]="'--topic-background-color: ' + theme?.background"
+  [ngClass]="theme"
   class="color-picker"
   ngx-colors-trigger
   ngx-colors
@@ -7,4 +7,6 @@
   [(ngModel)]="color"
   (change)="emitOnChangeColor()"
   colorsAnimation="popup"
+  [hideColorPicker]="true"
+  [hideTextInput]="true"
 ></ngx-colors>

@@ -7,10 +7,9 @@
 
   /* --------------------------------- Topic -------------------------------- */
   .topic-name {
-    width: 70%;
-    background-color: var(--topic-background-color);
-    color: var(--topic-color);
-    border: 2px solid var(--topic-color);
+    width: 65%;
+    background-color: var(--color-primary);
+    color: var(--color-onPrimary);
     border-radius: var(--border-radius);
     text-align: center;
     font-weight: bold;
@@ -18,11 +17,11 @@
 
   /* --------------------------------- Play --------------------------------- */
   .play-btn {
-    color: var(--topic-color);
+    color: var(--color-primary);
 
     i {
       display: inline-block;
-      scale: 1.25;
+      scale: 1;
     }
   }
 }

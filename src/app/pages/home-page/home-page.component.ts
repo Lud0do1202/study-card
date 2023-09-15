@@ -21,61 +21,13 @@ export class HomePageComponent implements OnInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     // Get the topics
-    // this.$topic$.getAll().subscribe({
-    //   next: (topics: Topic[]) => {
-    //     this.topics = topics;
-    //     this.topicsFiltered = topics;
-    //   },
-    //   error: () => this.router.error(),
-    // });
-    this.topics = [
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
+    this.$topic$.getAll().subscribe({
+      next: (topics: Topic[]) => {
+        this.topics = topics;
+        this.topicsFiltered = topics;
       },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-      {
-        id: '1',
-        topic: 'Angular',
-        color: '#e91e63',
-      },
-    ];
-    this.topicsFiltered = this.topics;
+      error: () => this.router.error(),
+    });
   }
 
   /* ----------------------------- Filter Topics ---------------------------- */

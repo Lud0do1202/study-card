@@ -8,6 +8,75 @@
   --border-radius: 0.2em;
 }
 
+/* -------------------------------- Palettes -------------------------------- */
+// Red
+.red-theme {
+  --color-primary: #c00015;
+  --color-onPrimary: #ffffff;
+  --color-primaryContainer: #ffdad6;
+  --color-onPrimaryContainer: #410002;
+  --color-secondary: #775653;
+  --color-onSecondary: #ffffff;
+  --color-secondaryContainer: #ffdad6;
+  --color-onSecondaryContainer: #2c1513;
+  --color-tertiary: #715b2e;
+  --color-onTertiary: #ffffff;
+  --color-tertiaryContainer: #fedfa6;
+  --color-onTertiaryContainer: #261900;
+  --color-error: #ba1a1a;
+  --color-errorContainer: #ffdad6;
+  --color-onError: #ffffff;
+  --color-onErrorContainer: #410002;
+  --color-background: #fffbff;
+  --color-onBackground: #201a19;
+  --color-surface: #fffbff;
+  --color-onSurface: #201a19;
+  --color-surfaceVariant: #f5dddb;
+  --color-onSurfaceVariant: #534341;
+  --color-outline: #857371;
+  --color-onInverseSurface: #fbeeec;
+  --color-inverseSurface: #362f2e;
+  --color-inversePrimary: #ffb4ac;
+  --color-shadow: #000000;
+  --color-surfaceTint: #c00015;
+  --color-outlineVariant: #d8c2bf;
+  --color-scrim: #000000;
+}
+
+// Pink
+.pink-theme {
+  --color-primary: #bc004b;
+  --color-onPrimary: #ffffff;
+  --color-primaryContainer: #ffd9de;
+  --color-onPrimaryContainer: #400014;
+  --color-secondary: #75565b;
+  --color-onSecondary: #ffffff;
+  --color-secondaryContainer: #ffd9de;
+  --color-onSecondaryContainer: #2c1519;
+  --color-tertiary: #795831;
+  --color-onTertiary: #ffffff;
+  --color-tertiaryContainer: #ffddba;
+  --color-onTertiaryContainer: #2b1700;
+  --color-error: #ba1a1a;
+  --color-errorContainer: #ffdad6;
+  --color-onError: #ffffff;
+  --color-onErrorContainer: #410002;
+  --color-background: #fffbff;
+  --color-onBackground: #201a1b;
+  --color-surface: #fffbff;
+  --color-onSurface: #201a1b;
+  --color-surfaceVariant: #f3dddf;
+  --color-onSurfaceVariant: #524345;
+  --color-outline: #847375;
+  --color-onInverseSurface: #fbeeee;
+  --color-inverseSurface: #362f2f;
+  --color-inversePrimary: #ffb2be;
+  --color-shadow: #000000;
+  --color-surfaceTint: #bc004b;
+  --color-outlineVariant: #d6c2c3;
+  --color-scrim: #000000;
+}
+
 /* ------------------------------ Media Queries ----------------------------- */
 // Mobile S (<= 320px)
 @media screen and (max-width: 400px) {
@@ -67,10 +136,6 @@ body {
   margin: 0;
   height: 100vh;
 
-  // Default color
-  background-color: var(--background-color);
-  color: var(--on-background-color);
-
   // Default typo
   font-size: var(--font-m);
   font-family: var(--font-family);
@@ -79,6 +144,10 @@ body {
 /* ---------------------------------- Pages --------------------------------- */
 .page {
   height: 100%;
+
+  // Color
+  background-color: var(--color-background);
+  color: var(--color-onbackground);
 
   // Header
   .header {

@@ -1,16 +1,10 @@
-<div
-  class="topic"
-  [ngStyle]="{
-    '--topic-background-color' : theme.background,
-    '--topic-color' : theme.normal,
-}"
->
+<div class="topic" [ngClass]="topic.theme">
   <!-- ------------------------------ Color ------------------------------ -->
-  <app-color-picker [theme]="theme" (onChangeColor)="onChangeColor($event)"></app-color-picker>
+  <app-color-picker [theme]="topic.theme" (onChangeColor)="onChangeColor($event)"></app-color-picker>
 
   <!-- ------------------------------- Name -------------------------------- -->
   <div class="topic-name" (click)="goToTopicPage()">{{ topic.topic }}</div>
 
   <!-- ------------------------------- Play -------------------------------- -->
-  <div class="play-btn"><i class="bi bi-play"></i></div>
+  <div class="play-btn"><i class="bi bi-pen-fill"></i></div>
 </div>

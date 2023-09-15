@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Theme } from 'src/app/interfaces/theme';
+
 import { ThemeService } from 'src/app/services/theme.service';
+import { Theme } from 'src/app/types/theme';
 
 @Component({
   selector: 'app-color-picker',
@@ -9,8 +10,8 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class ColorPickerComponent implements OnInit {
   /* ----------------------------------- Var ---------------------------------- */
-  @Output() onChangeColor = new EventEmitter<string>();
-  @Input() theme?: Theme;
+  @Output() onChangeColor = new EventEmitter<Theme>();
+  @Input() theme: Theme = 'pink-theme';
   palette!: string[];
   color!: string;
 
@@ -21,14 +22,15 @@ export class ColorPickerComponent implements OnInit {
   ngOnInit(): void {
     // Palette
     this.palette = this.$theme$.palette;
-
-    // Theme
-    this.theme = this.theme ?? this.$theme$.getTheme(this.$theme$.defaultColor);
-    this.color = this.theme.normal;
+    this.color = this.$theme$.getPrimaryColor(this.theme);
   }
 
   /* ------------------------------ Change Color ------------------------------ */
   emitOnChangeColor(): void {
-    this.onChangeColor.emit(this.color);
+    // Update the theme of the color picker
+    this.theme = this.$theme$.getTheme(this.color)!;
+
+    // Emit the theme
+    this.onChangeColor.emit(this.theme);
   }
 }
