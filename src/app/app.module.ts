@@ -23,6 +23,8 @@ import { ButtonIconComponent } from './components/button-icon/button-icon.compon
 import { PlayPageComponent } from './pages/play-page/play-page.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.component';
+import { SlidebarRenameTopicComponent } from './components/slidebar-rename-topic/slidebar-rename-topic.component';
+import { SlidebarFooterComponent } from './components/slidebar-footer/slidebar-footer.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -42,6 +44,8 @@ import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.
     PlayPageComponent,
     SlidebarComponent,
     EditTopicPageComponent,
+    SlidebarRenameTopicComponent,
+    SlidebarFooterComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],

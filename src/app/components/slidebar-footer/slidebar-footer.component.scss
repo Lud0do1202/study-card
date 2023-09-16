@@ -1,0 +1,22 @@
+/* ----------------------------- Footer Slidebar ---------------------------- */
+.footer-slidebar {
+  display: flex;
+
+  // Buttons
+  .cancel,
+  .confirm {
+    width: 50%;
+    text-align: center;
+    font-size: var(--font-m);
+  }
+
+  // Cancel
+  .cancel {
+    color: var(--bs-danger);
+  }
+
+  // Confirm
+  .confirm {
+    color: var(--bs-success);
+  }
+}

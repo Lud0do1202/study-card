@@ -11,9 +11,7 @@ import { TopicService } from 'src/app/services/topic.service';
 })
 export class EditTopicPageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
-  @ViewChild('renameSlidebar') renameSlidebar!: SlidebarComponent;
   topic!: Topic;
-  newTopicName!: string;
 
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private router: RouterService, private $topic$: TopicService) {}
@@ -21,33 +19,10 @@ export class EditTopicPageComponent implements OnInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     this.topic = (this.router.data as Topic) ?? this.$topic$.defaultTopic;
-    this.newTopicName = this.topic.topic;
   }
 
-  /* ---------------------- Show Rename Topic Slidebar ---------------------- */
-  showRenameTopicSlidebar(): void {
-    this.renameSlidebar.show();
-    this.newTopicName = this.topic.topic;
+  /* -------------------------------- Renamed ------------------------------- */
+  onRenamed(newTopicName: string | undefined): void {
+    if (newTopicName) this.topic.topic = newTopicName;
   }
-
-  /* --------------------------- Update Name Topic -------------------------- */
-  submitRename(): void {
-    // Update local topic
-    this.topic.topic = this.newTopicName;
-
-    // Update DB
-    this.$topic$.update(this.topic).subscribe({
-      error: () => this.router.error(),
-    });
-
-    // Close slidebar
-    this.renameSlidebar.close();
-  }
-
-  /* --------------------------- Cancel Name Topic -------------------------- */
-  cancelRename(): void {
-    this.renameSlidebar.close();
-  }
-
-  
 }

@@ -1,0 +1,31 @@
+/* ---------------------------------- Input --------------------------------- */
+.slidebar-input-group {
+  display: flex;
+  flex-direction: column;
+
+  // Label
+  label {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-xl);
+    margin-bottom: 0.25em;
+  }
+
+  // Input
+  input {
+    width: 90%;
+    margin: 0 auto 0.5em auto;
+    padding: 0.3em;
+    background-color: var(--background-color);
+    color: var(--onBackground-color);
+    font-size: var(--font-l);
+    border: 1px solid var(--outline-color);
+    border-radius: var(--border-radius);
+
+    &:focus {
+      outline: 2px solid var(--outline-color);
+    }
+  }
+}
+
+
