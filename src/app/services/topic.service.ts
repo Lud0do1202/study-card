@@ -40,4 +40,11 @@ export class TopicService {
 
     return this.http.put<Topic>(environment.api.topic, { topic }, { headers });
   }
+
+  /* -------------------------------- Delete -------------------------------- */
+  delete(topic: Topic): Observable<Topic> {
+    const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
+
+    return this.http.delete<Topic>(environment.api.topic, { headers, body: { topic } });
+  }
 }

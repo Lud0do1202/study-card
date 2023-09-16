@@ -1,0 +1,14 @@
+.warning {
+  color: var(--onPrimaryContainer-color);
+  text-align: center;
+  font-size: var(--font-s);
+  margin-bottom: 0.25em;
+  font-weight: bold;
+}
+
+.warning-details {
+  color: var(--onPrimaryContainer-color);
+  text-align: center;
+  font-size: var(--font-xs);
+  margin-bottom: 1em;
+}

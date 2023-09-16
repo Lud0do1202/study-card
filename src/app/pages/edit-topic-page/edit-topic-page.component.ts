@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { SlidebarComponent } from 'src/app/components/slidebar/slidebar.component';
+import { Component, OnInit } from '@angular/core';
 import { Topic } from 'src/app/interfaces/topic';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
@@ -19,10 +18,5 @@ export class EditTopicPageComponent implements OnInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     this.topic = (this.router.data as Topic) ?? this.$topic$.defaultTopic;
-  }
-
-  /* -------------------------------- Renamed ------------------------------- */
-  onRenamed(newTopicName: string | undefined): void {
-    if (newTopicName) this.topic.topic = newTopicName;
   }
 }

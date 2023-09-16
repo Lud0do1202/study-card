@@ -1,0 +1,10 @@
+<app-slidebar #slidebar>
+  <form>
+    <!-- Warning -->
+    <div class="warning">Are you sure you want to delete this topic ?</div>
+    <div class="warning-details">All datas will be lost forever</div>
+
+    <!-- ----------------------------- Buttons ----------------------------- -->
+    <app-slidebar-footer (onCancel)="cancelRename()" (onConfirm)="confirmRename()" confirm="Yes"></app-slidebar-footer>
+  </form>
+</app-slidebar>

@@ -25,6 +25,7 @@ import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.component';
 import { SlidebarRenameTopicComponent } from './components/slidebar-rename-topic/slidebar-rename-topic.component';
 import { SlidebarFooterComponent } from './components/slidebar-footer/slidebar-footer.component';
+import { SlidebarDeleteTopicComponent } from './components/slidebar-delete-topic/slidebar-delete-topic.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -46,6 +47,7 @@ import { SlidebarFooterComponent } from './components/slidebar-footer/slidebar-f
     EditTopicPageComponent,
     SlidebarRenameTopicComponent,
     SlidebarFooterComponent,
+    SlidebarDeleteTopicComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],

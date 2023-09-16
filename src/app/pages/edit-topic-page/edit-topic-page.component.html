@@ -12,13 +12,12 @@
     <app-button-icon icon="arrow-return-left" routerLink="/home"></app-button-icon>
     <app-button-icon icon="plus-lg"></app-button-icon>
     <app-button-icon icon="alphabet" (onClick)="renameSlidebar.show()"></app-button-icon>
-    <app-button-icon icon="trash3"></app-button-icon>
+    <app-button-icon icon="trash3" (onClick)="deleteSlidebar.show()"></app-button-icon>
   </div>
 
   <!-- -------------------------- Rename Slidebar -------------------------- -->
-  <app-slidebar-rename-topic
-    [topic]="topic"
-    (onRenamed)="onRenamed($event)"
-    #renameSlidebar
-  ></app-slidebar-rename-topic>
+  <app-slidebar-rename-topic [topic]="topic" #renameSlidebar></app-slidebar-rename-topic>
+
+  <!-- Delete Slidebar -->
+  <app-slidebar-delete-topic [topic]="topic" #deleteSlidebar></app-slidebar-delete-topic>
 </div>

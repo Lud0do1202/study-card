@@ -23,7 +23,7 @@ export class LandingPageComponent implements OnInit {
     this.$user$.auth().then((authObservable: Observable<void>) => {
       authObservable.subscribe({
         next: () => this.logoShrinkingComponent.startAnimation(), // Start animation
-        error: (e) => this.router.error(), // ERROR
+        error: () => this.router.error(), // ERROR
       });
     });
   }

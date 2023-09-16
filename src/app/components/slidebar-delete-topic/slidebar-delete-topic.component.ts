@@ -1,28 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { SlidebarComponent } from '../slidebar/slidebar.component';
 import { Topic } from 'src/app/interfaces/topic';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
+import { SlidebarComponent } from '../slidebar/slidebar.component';
 
 @Component({
-  selector: 'app-slidebar-rename-topic',
-  templateUrl: './slidebar-rename-topic.component.html',
-  styleUrls: ['./slidebar-rename-topic.component.scss'],
+  selector: 'app-slidebar-delete-topic',
+  templateUrl: './slidebar-delete-topic.component.html',
+  styleUrls: ['./slidebar-delete-topic.component.scss'],
 })
-export class SlidebarRenameTopicComponent implements OnInit {
+export class SlidebarDeleteTopicComponent {
   /* ---------------------------------- Var --------------------------------- */
   @ViewChild('slidebar') slidebar!: SlidebarComponent;
   @Input() topic!: Topic;
-  @Output() onRenamed = new EventEmitter<string | undefined>();
-  newTopicName!: string;
 
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private router: RouterService, private $topic$: TopicService) {}
-
-  /* --------------------------------- Init --------------------------------- */
-  ngOnInit(): void {
-    this.newTopicName = this.topic.topic;
-  }
 
   /* --------------------------------- Show --------------------------------- */
   show(): void {
@@ -31,15 +24,9 @@ export class SlidebarRenameTopicComponent implements OnInit {
 
   /* --------------------------- Update Name Topic -------------------------- */
   confirmRename(): void {
-    // Update local topic
-    this.topic.topic = this.newTopicName;
-
     // Update DB
-    this.$topic$.update(this.topic).subscribe({
-      next: () => {
-        this.slidebar.close();
-        this.onRenamed.emit(this.newTopicName);
-      },
+    this.$topic$.delete(this.topic).subscribe({
+      next: () => this.router.navigate('/home'),
       error: () => this.router.error(),
     });
   }
@@ -47,6 +34,5 @@ export class SlidebarRenameTopicComponent implements OnInit {
   /* --------------------------- Cancel Name Topic -------------------------- */
   cancelRename(): void {
     this.slidebar.close();
-    this.onRenamed.emit();
   }
 }

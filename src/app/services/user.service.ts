@@ -18,8 +18,8 @@ export class UserService {
   async auth(): Promise<Observable<void>> {
     // Get the device uuid
     return this._getDeviceID().then((deviceID: DeviceId) => {
+      // Get ID
       const id = deviceID.identifier;
-      console.log(id);
 
       // Set the userID
       this.setUserID(id);
