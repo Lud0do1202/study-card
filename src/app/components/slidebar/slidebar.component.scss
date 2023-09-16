@@ -1,16 +1,16 @@
 .slidebar {
   position: absolute;
-  height: 50%;
   width: 100%;
   background-color: var(--primaryContainer-color);
+  border-top: 2px solid var(--secondary-color);
   border-radius: 1.5em 1.5em 0 0;
-  padding: 2em;
+  padding: 1em 2em;
 }
 
 .mask-slidebar {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: var(--surface-color);
-  opacity: 0.8;
+  background-color: var(--secondaryContainer-color);
+  opacity: 0.4;
 }

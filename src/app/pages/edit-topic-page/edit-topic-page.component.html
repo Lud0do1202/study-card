@@ -1,0 +1,41 @@
+<div class="edit-topic-page page" [ngClass]="topic.theme">
+  <!-- ------------------------------- Header -------------------------------- -->
+  <div class="header">
+    <app-title [text]="topic.topic | uppercase"></app-title>
+  </div>
+
+  <!-- ------------------------------- Body -------------------------------- -->
+  <div class="body"></div>
+
+  <!-- ------------------------------ Footer ------------------------------- -->
+  <div class="footer">
+    <app-button-icon icon="arrow-return-left" routerLink="/home"></app-button-icon>
+    <app-button-icon icon="plus-lg"></app-button-icon>
+    <app-button-icon icon="alphabet" (onClick)="showRenameTopicSlidebar()"></app-button-icon>
+    <app-button-icon icon="trash3"></app-button-icon>
+  </div>
+
+  <!-- -------------------------- Rename Slidebar -------------------------- -->
+  <app-slidebar #renameSlidebar>
+    <form>
+      <!-- ----------------------------- Input ----------------------------- -->
+      <div class="rename-topic-input">
+        <label for="rename-topic-input">Topic Name</label>
+        <input
+          id="rename-topic-input"
+          class="search-field"
+          type="text"
+          aria-label="Topic name"
+          [(ngModel)]="newTopicName"
+          name="newTopicName"
+        />
+      </div>
+
+      <!-- ---------------------------- Buttons ---------------------------- -->
+      <div class="footer-slidebar">
+        <div class="cancel" (click)="cancelRename()">Cancel</div>
+        <div class="confirm" (click)="submitRename()">Confirm</div>
+      </div>
+    </form>
+  </app-slidebar>
+</div>

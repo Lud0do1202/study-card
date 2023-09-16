@@ -20,8 +20,8 @@ export class SlidebarComponent implements OnInit, AfterViewInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     // Keyframes
-    this.keyframesSlidebar = [{ top: '100%' }, { top: '50%' }];
-    this.keyframesMask = [{ top: '100%' }, { top: '0%' }];
+    this.keyframesSlidebar = [{ bottom: '-100%' }, { bottom: '0%' }];
+    this.keyframesMask = [{ bottom: '-100%' }, { bottom: '0%' }];
 
     // Set animation options
     this.animationOptions = {
@@ -40,25 +40,32 @@ export class SlidebarComponent implements OnInit, AfterViewInit {
 
   /* --------------------------------- Show --------------------------------- */
   show(): void {
-    // Start the animation
-    this.slidebarElement.animate(this.keyframesSlidebar, this.animationOptions).addEventListener('finish', () => {
-      // Can close
-      this.canClose = true;
+    // Cannot close while animated
+    this.canClose = false;
 
+    // Start the animation
+    this.maskElement.animate(this.keyframesMask, this.animationOptions);
+    this.slidebarElement.animate(this.keyframesSlidebar, this.animationOptions).addEventListener('finish', () => {
       // Reverse keyframes
       this.keyframesSlidebar.reverse();
       this.keyframesMask.reverse();
+
+      // Can close
+      this.canClose = true;
     });
-    this.maskElement.animate(this.keyframesMask, this.animationOptions);
   }
 
   /* --------------------------------- Close -------------------------------- */
   close(): void {
-    // Start the animation
-    this.slidebarElement.animate(this.keyframesSlidebar, this.animationOptions).addEventListener('finish', () => {
-      // Cannot close
-      this.canClose = false;
+    // Stop if not end animation
+    if (!this.canClose) return;
 
+    // Cannot close again
+    this.canClose = false;
+
+    // Start the animation
+    this.maskElement.animate(this.keyframesSlidebar, this.animationOptions);
+    this.slidebarElement.animate(this.keyframesSlidebar, this.animationOptions).addEventListener('finish', () => {
       // Closed
       this.onClose.emit();
 
@@ -66,6 +73,5 @@ export class SlidebarComponent implements OnInit, AfterViewInit {
       this.keyframesSlidebar.reverse();
       this.keyframesMask.reverse();
     });
-    this.maskElement.animate(this.keyframesSlidebar, this.animationOptions);
   }
 }

@@ -19,10 +19,10 @@ import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { TopicComponent } from './components/topic/topic.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
-import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
+import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -38,10 +38,10 @@ import { SlidebarComponent } from './components/slidebar/slidebar.component';
     TopicListComponent,
     TopicComponent,
     ColorPickerComponent,
-    TopicPageComponent,
     ButtonIconComponent,
     PlayPageComponent,
     SlidebarComponent,
+    EditTopicPageComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],

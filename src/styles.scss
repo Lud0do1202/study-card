@@ -71,6 +71,9 @@ body {
   // Default typo
   font-size: var(--font-m);
   font-family: var(--font-family);
+
+  // No Overflow
+  overflow: hidden;
 }
 
 /* ---------------------------------- Pages --------------------------------- */
