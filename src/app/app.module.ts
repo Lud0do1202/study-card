@@ -28,6 +28,8 @@ import { SlidebarFooterComponent } from './components/slidebar-footer/slidebar-f
 import { SlidebarDeleteTopicComponent } from './components/slidebar-delete-topic/slidebar-delete-topic.component';
 import { EditCardComponent } from './components/edit-card/edit-card.component';
 import { EditCardListComponent } from './components/edit-card-list/edit-card-list.component';
+import { EditCardPageComponent } from './pages/edit-card-page/edit-card-page.component';
+import { SlidebarDeleteCardComponent } from './components/slidebar-delete-card/slidebar-delete-card.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -52,6 +54,8 @@ import { EditCardListComponent } from './components/edit-card-list/edit-card-lis
     SlidebarDeleteTopicComponent,
     EditCardComponent,
     EditCardListComponent,
+    EditCardPageComponent,
+    SlidebarDeleteCardComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],

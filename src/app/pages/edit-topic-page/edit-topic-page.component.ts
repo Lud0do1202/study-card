@@ -3,7 +3,6 @@ import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
 import { CardService } from 'src/app/services/card.service';
 import { RouterService } from 'src/app/services/router.service';
-import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-edit-topic-page',
@@ -16,13 +15,28 @@ export class EditTopicPageComponent implements OnInit {
   cards!: Card[];
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private router: RouterService, private $topic$: TopicService, private $card$: CardService) {}
+  constructor(private router: RouterService, private $card$: CardService) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
-    this.topic = (this.router.data as Topic) ?? this.$topic$.defaultTopic;
+    this.topic = this.router.data as Topic;
     this.$card$.getAll(this.topic.id).subscribe({
       next: (cards) => (this.cards = cards),
+      error: () => this.router.error(),
+    });
+  }
+
+  /* ------------------------------- New Card ------------------------------- */
+  newCard(): void {
+    const newCard: Card = {
+      id: 0,
+      id_topic: this.topic.id,
+      question: 'Question ?',
+      answer: 'Answer',
+    };
+
+    this.$card$.insert(newCard).subscribe({
+      next: (card) => this.router.navigate('/edit-card', { topic: this.topic, card }),
       error: () => this.router.error(),
     });
   }

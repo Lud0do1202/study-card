@@ -1,7 +1,7 @@
 import { Theme } from '../types/theme';
 
 export interface Topic {
-  id: string;
+  id: number;
   topic: string;
   theme: Theme;
 }

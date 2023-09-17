@@ -6,20 +6,17 @@
 
   <!-- ------------------------------- Body -------------------------------- -->
   <div class="body">
-    <app-edit-card-list class="edit-card-list" [cards]="cards" [topic]="topic"></app-edit-card-list>
+    <div>{{ card.question }}</div>
+    <div>{{ card.answer }}</div>
   </div>
 
   <!-- ------------------------------ Footer ------------------------------- -->
   <div class="footer">
-    <app-button-icon icon="arrow-return-left" routerLink="/home"></app-button-icon>
-    <app-button-icon icon="plus-lg" (onClick)="newCard()"></app-button-icon>
-    <app-button-icon icon="alphabet" (onClick)="renameSlidebar.show()"></app-button-icon>
+    <app-button-icon icon="arrow-return-left" (onClick)="back()"></app-button-icon>
+    <app-button-icon icon="check-lg" (onClick)="confirm()"></app-button-icon>
     <app-button-icon icon="trash3" (onClick)="deleteSlidebar.show()"></app-button-icon>
   </div>
 
-  <!-- -------------------------- Rename Slidebar -------------------------- -->
-  <app-slidebar-rename-topic [topic]="topic" #renameSlidebar></app-slidebar-rename-topic>
-
   <!-- -------------------------- Delete Slidebar -------------------------- -->
-  <app-slidebar-delete-topic [topic]="topic" #deleteSlidebar></app-slidebar-delete-topic>
+  <app-slidebar-delete-card [topic]="topic" #deleteSlidebar></app-slidebar-delete-card>
 </div>

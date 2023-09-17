@@ -14,9 +14,18 @@ export class CardService {
   constructor(private http: HttpClient, private $user$: UserService) {}
 
   /* -------------------------------- Get All ------------------------------- */
-  getAll(id_topic: number | string): Observable<Card[]> {
+  getAll(id_topic: number): Observable<Card[]> {
     const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!).set('X-Topic-ID', id_topic.toString());
 
     return this.http.get<Card[]>(environment.api.card, { headers });
+  }
+
+  /* -------------------------------- Insert -------------------------------- */
+  insert(card: Card): Observable<Card> {
+    const headers = new HttpHeaders()
+      .set('X-User-ID', this.$user$.getUserID()!)
+      .set('X-Topic-ID', card.id_topic.toString());
+
+    return this.http.post<Card>(environment.api.card, { card }, { headers });
   }
 }

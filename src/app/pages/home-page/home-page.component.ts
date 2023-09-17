@@ -48,7 +48,13 @@ export class HomePageComponent implements OnInit {
 
   /* ------------------------------- New Topic ------------------------------ */
   newTopic(): void {
-    this.$topic$.insert().subscribe({
+    const defaultTopic: Topic = {
+      id: 0,
+      topic: 'New Topic',
+      theme: 'pink-theme',
+    };
+
+    this.$topic$.insert(defaultTopic).subscribe({
       next: (topic: Topic) => this.router.navigate('/edit-topic', topic),
       error: () => this.router.error(),
     });

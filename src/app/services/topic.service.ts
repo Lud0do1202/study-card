@@ -9,12 +9,6 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class TopicService {
-  defaultTopic: Topic = {
-    id: '',
-    topic: 'New Topic',
-    theme: 'pink-theme',
-  };
-
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private http: HttpClient, private $user$: UserService) {}
 
@@ -26,10 +20,8 @@ export class TopicService {
   }
 
   /* -------------------------------- Insert -------------------------------- */
-  insert(topic?: Topic): Observable<Topic> {
+  insert(topic: Topic): Observable<Topic> {
     const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
-
-    topic = topic ?? this.defaultTopic;
 
     return this.http.post<Topic>(environment.api.topic, { topic }, { headers });
   }
