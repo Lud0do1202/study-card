@@ -1,0 +1,29 @@
+.edit-card {
+  width: 100%;
+  margin-top: 1em;
+
+  .edit-question {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--onPrimary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius) var(--border-radius) 0 var(--border-radius);
+    padding: 0.25em .35em;
+    font-size: var(--font-s);
+  }
+
+  .edit-answer {
+    position: relative;
+    float: right;
+    background-color: var(--primaryContainer-color);
+    color: var(--onPrimaryContainer-color);
+    border: 1px solid var(--primary-color);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 0.25em .35em;
+    font-size: var(--font-s);
+    width: 80%;
+  }
+}

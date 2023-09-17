@@ -32,7 +32,6 @@ CREATE TABLE `cards` (
   `id_topic` int(11) NOT NULL,
   `question` varchar(512) NOT NULL,
   `answer` varchar(256) NOT NULL,
-  `mastered` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
