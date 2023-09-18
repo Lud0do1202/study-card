@@ -35,7 +35,7 @@
   <!-- -------------------------- Delete Slidebar -------------------------- -->
   <app-slidebar-delete
     type="Topic"
-    [name]="topic.topic"
+    [name]="'\'' + topic.topic + '\''"
     (onClose)="onCloseDeleteSlidebar($event)"
     #deleteSlidebar
   ></app-slidebar-delete>

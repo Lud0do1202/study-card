@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
+import { CardService } from 'src/app/services/card.service';
 import { RouterService } from 'src/app/services/router.service';
 
 @Component({
@@ -9,21 +10,42 @@ import { RouterService } from 'src/app/services/router.service';
   styleUrls: ['./edit-card-page.component.scss'],
 })
 export class EditCardPageComponent implements OnInit {
+  /* ---------------------------------- Var --------------------------------- */
   topic!: Topic;
   card!: Card;
 
-  constructor(private router: RouterService) {}
+  /* ------------------------------ Constructor ----------------------------- */
+  constructor(private router: RouterService, private $card$: CardService) {}
 
+  /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     this.topic = this.router.data.topic!;
     this.card = this.router.data.card!;
   }
 
+  /* ---------------------------- Back Edit Topic --------------------------- */
   back(): void {
     this.router.editTopicPage(this.topic);
   }
 
+  /* ---------------------------- Confirm Changes --------------------------- */
   confirm(): void {
     console.log('CONFIRM CARD CHANGES');
+  }
+
+  /* -------------------------------- Delete -------------------------------- */
+  onCloseDeleteSlidebar(state: 'cancel' | 'confirm'): void {
+    // NO
+    if (state === 'cancel') {
+      return;
+    }
+
+    // YES
+    else {
+      this.$card$.delete(this.card.id).subscribe({
+        next: () => this.router.editTopicPage(this.topic),
+        error: () => this.router.error(),
+      });
+    }
   }
 }

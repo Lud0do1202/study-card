@@ -14,8 +14,14 @@
   <div class="footer">
     <app-footer-button-icon icon="arrow-return-left" (onClick)="back()"></app-footer-button-icon>
     <app-footer-button-icon icon="check-lg" (onClick)="confirm()"></app-footer-button-icon>
-    <app-footer-button-icon icon="trash3"></app-footer-button-icon>
+    <app-footer-button-icon icon="trash3" (onClick)="deleteSlidebar.show()"></app-footer-button-icon>
   </div>
 
   <!-- -------------------------- Delete Slidebar -------------------------- -->
+  <app-slidebar-delete
+    type="Card"
+    name="this card"
+    (onClose)="onCloseDeleteSlidebar($event)"
+    #deleteSlidebar
+  ></app-slidebar-delete>
 </div>

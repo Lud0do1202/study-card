@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -12,16 +12,17 @@ export class CardService {
   constructor(private http: HttpClient) {}
 
   /* -------------------------------- Get All ------------------------------- */
-  getAll(id_topic: number): Observable<Card[]> {
-    const headers = new HttpHeaders().set('X-Topic-ID', id_topic.toString());
-
-    return this.http.get<Card[]>(environment.api.card, { headers });
+  getAll(topicID: number): Observable<Card[]> {
+    return this.http.get<Card[]>(environment.api.card, { params: new HttpParams().set('topicID', topicID) });
   }
 
   /* -------------------------------- Insert -------------------------------- */
   insert(card: Card): Observable<Card> {
-    const headers = new HttpHeaders().set('X-Topic-ID', card.id_topic.toString());
+    return this.http.post<Card>(environment.api.card, { card });
+  }
 
-    return this.http.post<Card>(environment.api.card, { card }, { headers });
+  /* -------------------------------- Delete -------------------------------- */
+  delete(cardID: number): Observable<void> {
+    return this.http.delete<void>(environment.api.card, { params: new HttpParams().set('cardID', cardID) });
   }
 }

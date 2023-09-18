@@ -64,7 +64,7 @@ export class EditTopicPageComponent implements OnInit {
 
     // YES
     else {
-      this.$topic$.delete(this.topic).subscribe({
+      this.$topic$.delete(this.topic.id).subscribe({
         next: () => this.router.topicsPage(),
         error: () => this.router.error(),
       });
