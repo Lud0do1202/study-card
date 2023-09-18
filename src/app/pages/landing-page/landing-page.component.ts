@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LogoShrinkingComponent } from 'src/app/components/logo-shrinking/logo-shrinking.component';
+import { LogoShrinkingComponent } from 'src/app/components/page/logo-shrinking/logo-shrinking.component';
 import { RouterService } from 'src/app/services/router.service';
 import { UserService } from 'src/app/services/user.service';
 
