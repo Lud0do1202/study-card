@@ -23,7 +23,7 @@ export class EditTopicPageComponent implements OnInit {
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
     // Get topic
-    this.topic = this.router.data as Topic;
+    this.topic = this.router.data.topic!;
 
     // Set the input renameSlidebar
     this.newTopicName = this.topic.topic;
@@ -65,7 +65,7 @@ export class EditTopicPageComponent implements OnInit {
     // YES
     else {
       this.$topic$.delete(this.topic).subscribe({
-        next: () => this.router.navigate('/topics'),
+        next: () => this.router.topicsPage(),
         error: () => this.router.error(),
       });
     }
@@ -81,7 +81,7 @@ export class EditTopicPageComponent implements OnInit {
     };
 
     this.$card$.insert(newCard).subscribe({
-      next: (card) => this.router.navigate('/edit-card', { topic: this.topic, card }),
+      next: (card) => this.router.editCardPage(this.topic, card),
       error: () => this.router.error(),
     });
   }

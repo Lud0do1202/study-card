@@ -8,6 +8,7 @@ import { TopicService } from 'src/app/services/topic.service';
   selector: 'app-topics-page',
   templateUrl: './topics-page.component.html',
   styleUrls: ['./topics-page.component.scss'],
+  providers: [RemoveAccentsPipe],
 })
 export class TopicsPageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
@@ -53,7 +54,7 @@ export class TopicsPageComponent implements OnInit {
     };
 
     this.$topic$.insert(defaultTopic).subscribe({
-      next: (topic: Topic) => this.router.navigate('/edit-topic', topic),
+      next: (topic: Topic) => this.router.editTopicPage(topic),
       error: () => this.router.error(),
     });
   }

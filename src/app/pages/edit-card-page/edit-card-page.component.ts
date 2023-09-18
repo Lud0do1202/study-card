@@ -15,12 +15,12 @@ export class EditCardPageComponent implements OnInit {
   constructor(private router: RouterService) {}
 
   ngOnInit(): void {
-    this.topic = this.router.data.topic;
-    this.card = this.router.data.card;
+    this.topic = this.router.data.topic!;
+    this.card = this.router.data.card!;
   }
 
   back(): void {
-    this.router.navigate('/edit-topic', this.topic);
+    this.router.editTopicPage(this.topic);
   }
 
   confirm(): void {

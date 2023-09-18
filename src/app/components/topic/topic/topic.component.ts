@@ -31,11 +31,11 @@ export class TopicComponent {
   /* -------------------------------- Router -------------------------------- */
   // Play
   play(): void {
-    this.router.navigate('/play', this.topic);
+    this.router.playPage(this.topic, );
   }
 
   // Edit
   edit(): void {
-    this.router.navigate('/edit-topic', this.topic);
+    this.router.editTopicPage( this.topic);
   }
 }
