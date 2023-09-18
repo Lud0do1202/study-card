@@ -16,19 +16,19 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { TitleComponent } from './components/page/title/title.component';
 import { SearchBarComponent } from './components/input/search-bar/search-bar.component';
 import { RemoveAccentsPipe } from './pipes/remove-accents.pipe';
-import { TopicListComponent } from './components/topic-list/topic-list.component';
-import { TopicComponent } from './components/topic/topic.component';
+import { TopicComponent } from './components/topic/topic/topic.component';
 import { ColorPickerComponent } from './components/input/color-picker/color-picker.component';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
 import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.component';
-import { EditCardComponent } from './components/edit-card/edit-card.component';
-import { EditCardListComponent } from './components/edit-card-list/edit-card-list.component';
+import { EditCardComponent } from './components/card/edit-card/edit-card.component';
 import { EditCardPageComponent } from './pages/edit-card-page/edit-card-page.component';
 import { SlidebarTitleComponent } from './components/slidebar/slidebar-title/slidebar-title.component';
 import { SlidebarComponent } from './components/slidebar/slidebar/slidebar.component';
 import { SlidebarFooterComponent } from './components/slidebar/slidebar-footer/slidebar-footer.component';
 import { SlidebarDeleteComponent } from './components/slidebar/slidebar-delete/slidebar-delete.component';
 import { FooterButtonIconComponent } from './components/page/footer-button-icon/footer-button-icon.component';
+import { TopicListComponent } from './components/topic/topic-list/topic-list.component';
+import { EditCardListComponent } from './components/card/edit-card-list/edit-card-list.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
