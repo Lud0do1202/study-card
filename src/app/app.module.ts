@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxColorsModule } from 'ngx-colors';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /* -------------------------------- Component ------------------------------- */
 import { AppComponent } from './app.component';
@@ -29,6 +29,7 @@ import { FooterButtonIconComponent } from './components/page/footer-button-icon/
 import { TopicListComponent } from './components/topic/topic-list/topic-list.component';
 import { EditCardListComponent } from './components/card/edit-card-list/edit-card-list.component';
 import { TopicsPageComponent } from './pages/topics-page/topics-page.component';
+import { UserIdInterceptor } from './interceptors/user-id.interceptor';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -56,7 +57,13 @@ import { TopicsPageComponent } from './pages/topics-page/topics-page.component';
     TopicsPageComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserIdInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

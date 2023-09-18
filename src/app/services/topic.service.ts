@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Topic } from '../interfaces/topic';
 import { Observable } from 'rxjs';
@@ -14,29 +14,21 @@ export class TopicService {
 
   /* -------------------------------- Get All ------------------------------- */
   getAll(): Observable<Topic[]> {
-    const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
-
-    return this.http.get<Topic[]>(environment.api.topic, { headers });
+    return this.http.get<Topic[]>(environment.api.topic);
   }
 
   /* -------------------------------- Insert -------------------------------- */
   insert(topic: Topic): Observable<Topic> {
-    const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
-
-    return this.http.post<Topic>(environment.api.topic, { topic }, { headers });
+    return this.http.post<Topic>(environment.api.topic, { topic });
   }
 
   /* -------------------------------- Update -------------------------------- */
   update(topic: Topic): Observable<Topic> {
-    const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
-
-    return this.http.put<Topic>(environment.api.topic, { topic }, { headers });
+    return this.http.put<Topic>(environment.api.topic, { topic });
   }
 
   /* -------------------------------- Delete -------------------------------- */
   delete(topic: Topic): Observable<Topic> {
-    const headers = new HttpHeaders().set('X-User-ID', this.$user$.getUserID()!);
-
-    return this.http.delete<Topic>(environment.api.topic, { headers, body: { topic } });
+    return this.http.delete<Topic>(environment.api.topic, { body: { topic } });
   }
 }

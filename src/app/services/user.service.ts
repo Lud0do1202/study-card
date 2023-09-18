@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -12,7 +12,7 @@ export class UserService {
   private _userID = 'userID';
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private http: HttpClient) {}
+  constructor(private handler: HttpBackend) {}
 
   /* --------------------------------- Auth --------------------------------- */
   async auth(): Promise<Observable<void>> {
@@ -24,8 +24,11 @@ export class UserService {
       // Set the userID
       this.setUserID(id);
 
+      // Get http client by http backend > not interceptor
+      const http = new HttpClient(this.handler);
+
       // Sign up if not register
-      return this.http.post<void>(environment.api.auth, { id });
+      return http.post<void>(environment.api.auth, { id });
     });
   }
 
