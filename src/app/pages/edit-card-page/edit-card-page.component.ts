@@ -30,7 +30,10 @@ export class EditCardPageComponent implements OnInit {
 
   /* ---------------------------- Confirm Changes --------------------------- */
   confirm(): void {
-    console.log('CONFIRM CARD CHANGES');
+    this.$card$.update(this.card).subscribe({
+      next: () => this.router.editTopicPage(this.topic),
+      error: () => this.router.error(),
+    });
   }
 
   /* -------------------------------- Delete -------------------------------- */

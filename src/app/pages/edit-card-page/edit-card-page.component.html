@@ -6,8 +6,8 @@
 
   <!-- ------------------------------- Body -------------------------------- -->
   <div class="body">
-    <div>{{ card.question }}</div>
-    <div>{{ card.answer }}</div>
+    <app-question class="question" [card]="card"></app-question>
+    <app-answer class="answer" [card]="card"></app-answer>
   </div>
 
   <!-- ------------------------------ Footer ------------------------------- -->

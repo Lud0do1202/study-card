@@ -1,0 +1,13 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.question {
+  height: 50%;
+}
+
+.answer {
+  height: 25%;
+}

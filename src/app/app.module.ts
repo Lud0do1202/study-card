@@ -30,6 +30,8 @@ import { TopicListComponent } from './components/topic/topic-list/topic-list.com
 import { EditCardListComponent } from './components/card/edit-card-list/edit-card-list.component';
 import { TopicsPageComponent } from './pages/topics-page/topics-page.component';
 import { UserIdInterceptor } from './interceptors/user-id.interceptor';
+import { QuestionComponent } from './components/page/question/question.component';
+import { AnswerComponent } from './components/page/answer/answer.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -55,6 +57,8 @@ import { UserIdInterceptor } from './interceptors/user-id.interceptor';
     SlidebarDeleteComponent,
     FooterButtonIconComponent,
     TopicsPageComponent,
+    QuestionComponent,
+    AnswerComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [

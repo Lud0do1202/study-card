@@ -21,6 +21,11 @@ export class CardService {
     return this.http.post<Card>(environment.api.card, { card });
   }
 
+  /* -------------------------------- Update -------------------------------- */
+  update(card: Card): Observable<void> {
+    return this.http.put<void>(environment.api.card, { card });
+  }
+
   /* -------------------------------- Delete -------------------------------- */
   delete(cardID: number): Observable<void> {
     return this.http.delete<void>(environment.api.card, { params: new HttpParams().set('cardID', cardID) });
