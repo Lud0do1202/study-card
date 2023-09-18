@@ -1,16 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss'],
-  providers: [RemoveAccentsPipe],
+  selector: 'app-topics-page',
+  templateUrl: './topics-page.component.html',
+  styleUrls: ['./topics-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
+export class TopicsPageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
   topics!: Topic[];
   topicsFiltered!: Topic[];

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
 import { CardService } from 'src/app/services/card.service';
@@ -65,7 +65,7 @@ export class EditTopicPageComponent implements OnInit {
     // YES
     else {
       this.$topic$.delete(this.topic).subscribe({
-        next: () => this.router.navigate('/home'),
+        next: () => this.router.navigate('/topics'),
         error: () => this.router.error(),
       });
     }

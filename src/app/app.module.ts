@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LogoShrinkingComponent } from './components/page/logo-shrinking/logo-shrinking.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { TitleComponent } from './components/page/title/title.component';
 import { SearchBarComponent } from './components/input/search-bar/search-bar.component';
@@ -29,6 +28,7 @@ import { SlidebarDeleteComponent } from './components/slidebar/slidebar-delete/s
 import { FooterButtonIconComponent } from './components/page/footer-button-icon/footer-button-icon.component';
 import { TopicListComponent } from './components/topic/topic-list/topic-list.component';
 import { EditCardListComponent } from './components/card/edit-card-list/edit-card-list.component';
+import { TopicsPageComponent } from './pages/topics-page/topics-page.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -36,7 +36,6 @@ import { EditCardListComponent } from './components/card/edit-card-list/edit-car
     AppComponent,
     LandingPageComponent,
     LogoShrinkingComponent,
-    HomePageComponent,
     ErrorPageComponent,
     TitleComponent,
     SearchBarComponent,
@@ -54,6 +53,7 @@ import { EditCardListComponent } from './components/card/edit-card-list/edit-car
     SlidebarTitleComponent,
     SlidebarDeleteComponent,
     FooterButtonIconComponent,
+    TopicsPageComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],

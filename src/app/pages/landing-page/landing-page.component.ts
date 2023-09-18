@@ -29,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   /* ---------------------------- Go To Home Page --------------------------- */
-  goToHomePage(): void {
-    this.router.navigate('/home');
+  goToTopicsPage(): void {
+    this.router.navigate('/topics');
   }
 }
