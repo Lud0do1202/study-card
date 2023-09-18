@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
+import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
 import { CardService } from 'src/app/services/card.service';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
@@ -9,16 +10,23 @@ import { TopicService } from 'src/app/services/topic.service';
   selector: 'app-edit-topic-page',
   templateUrl: './edit-topic-page.component.html',
   styleUrls: ['./edit-topic-page.component.scss'],
+  providers: [RemoveAccentsPipe],
 })
 export class EditTopicPageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
   topic!: Topic;
   cards!: Card[];
+  cardsFiltered!: Card[];
 
   newTopicName!: string;
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private router: RouterService, private $topic$: TopicService, private $card$: CardService) {}
+  constructor(
+    private router: RouterService,
+    private $topic$: TopicService,
+    private $card$: CardService,
+    private removeAccent: RemoveAccentsPipe
+  ) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
@@ -30,8 +38,27 @@ export class EditTopicPageComponent implements OnInit {
 
     // Get the cards
     this.$card$.getAll(this.topic.id).subscribe({
-      next: (cards) => (this.cards = cards),
+      next: (cards) => {
+        this.cards = cards;
+        this.cardsFiltered = cards;
+      },
       error: () => this.router.error(),
+    });
+  }
+
+  /* ----------------------------- Filter Cards ---------------------------- */
+  filterCards(search: string): void {
+    // Set the search as pure (no accent, lowercase)
+    const pureSearch = this.removeAccent.transform(search).toLocaleLowerCase();
+
+    // Filter the items
+    this.cardsFiltered = this.cards.filter((card: Card) => {
+      // Set the prop as pure
+      const pureQuestion = this.removeAccent.transform(card.question).toLocaleLowerCase();
+      const pureAnswer = this.removeAccent.transform(card.answer).toLocaleLowerCase();
+
+      // Filter it
+      return pureQuestion.includes(pureSearch) || pureAnswer.includes(pureSearch);
     });
   }
 

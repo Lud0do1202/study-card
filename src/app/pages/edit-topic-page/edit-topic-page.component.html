@@ -6,7 +6,8 @@
 
   <!-- ------------------------------- Body -------------------------------- -->
   <div class="body">
-    <app-edit-card-list class="edit-card-list" [cards]="cards" [topic]="topic"></app-edit-card-list>
+    <app-search-bar class="edit-card-search" (onChange)="filterCards($event)"></app-search-bar>
+    <app-edit-card-list class="edit-card-list" [cards]="cardsFiltered" [topic]="topic"></app-edit-card-list>
   </div>
 
   <!-- ------------------------------ Footer ------------------------------- -->
