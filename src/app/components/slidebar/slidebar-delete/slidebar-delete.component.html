@@ -1,0 +1,9 @@
+<app-slidebar
+  [title]="'Delete ' + type"
+  (onClose)="onClose.emit($event)"
+  cancelLabel="No"
+  confirmLabel="Yes"
+  #deleteSlidebar
+>
+  <div class="warning">Are you sure you want to delete '{{ name }}'</div>
+</app-slidebar>

@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SlidebarFooterComponent {
   /* ---------------------------------- Var --------------------------------- */
-  @Input() cancel: string = 'Cancel';
-  @Input() confirm: string = 'Confirm';
+  @Input() cancel!: string;
+  @Input() confirm!: string;
   @Output() onCancel = new EventEmitter<void>();
   @Output() onConfirm = new EventEmitter<void>();
 }

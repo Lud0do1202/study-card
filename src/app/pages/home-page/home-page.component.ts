@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SlidebarComponent } from 'src/app/components/slidebar/slidebar.component';
 import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
 import { RouterService } from 'src/app/services/router.service';

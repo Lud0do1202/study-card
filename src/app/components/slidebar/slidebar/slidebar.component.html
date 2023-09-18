@@ -1,0 +1,20 @@
+<!-- -------------------------------- Mask --------------------------------- -->
+<div class="mask-slidebar" (click)="close('cancel')" #mask></div>
+
+<!-- ------------------------------ Slidebar ------------------------------- -->
+<div class="slidebar" #slidebar>
+  <!-- ------------------------------- Title ------------------------------- -->
+  <app-slidebar-title [title]="title"></app-slidebar-title>
+
+  <!-- ------------------------------ Content ------------------------------ -->
+  <ng-content></ng-content>
+
+  <!-- ------------------------------ Footer ------------------------------- -->
+  <app-slidebar-footer
+    [cancel]="cancelLabel ?? 'Cancel'"
+    [confirm]="confirmLabel ?? 'Confirm'"
+    (onCancel)="close('cancel')"
+    (onConfirm)="close('confirm')"
+    *ngIf="showButtons"
+  ></app-slidebar-footer>
+</div>

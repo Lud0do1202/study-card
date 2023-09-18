@@ -18,8 +18,25 @@
   </div>
 
   <!-- -------------------------- Rename Slidebar -------------------------- -->
-  <app-slidebar-rename-topic [topic]="topic" #renameSlidebar></app-slidebar-rename-topic>
+  <app-slidebar title="Topic name" (onClose)="onCloseRenameSlidebar($event)" #renameSlidebar>
+    <!-- -------------------------------- Input -------------------------------- -->
+    <div class="rename-topic-input-container">
+      <input
+        id="rename-topic-input"
+        class="search-field"
+        type="text"
+        aria-label="Topic name"
+        [(ngModel)]="newTopicName"
+        name="newTopicName"
+      />
+    </div>
+  </app-slidebar>
 
   <!-- -------------------------- Delete Slidebar -------------------------- -->
-  <app-slidebar-delete-topic [topic]="topic" #deleteSlidebar></app-slidebar-delete-topic>
+  <app-slidebar-delete
+    type="Topic"
+    [name]="topic.topic"
+    (onClose)="onCloseDeleteSlidebar($event)"
+    #deleteSlidebar
+  ></app-slidebar-delete>
 </div>

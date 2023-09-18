@@ -21,15 +21,14 @@ import { TopicComponent } from './components/topic/topic.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
-import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { EditTopicPageComponent } from './pages/edit-topic-page/edit-topic-page.component';
-import { SlidebarRenameTopicComponent } from './components/slidebar-rename-topic/slidebar-rename-topic.component';
-import { SlidebarFooterComponent } from './components/slidebar-footer/slidebar-footer.component';
-import { SlidebarDeleteTopicComponent } from './components/slidebar-delete-topic/slidebar-delete-topic.component';
 import { EditCardComponent } from './components/edit-card/edit-card.component';
 import { EditCardListComponent } from './components/edit-card-list/edit-card-list.component';
 import { EditCardPageComponent } from './pages/edit-card-page/edit-card-page.component';
-import { SlidebarDeleteCardComponent } from './components/slidebar-delete-card/slidebar-delete-card.component';
+import { SlidebarTitleComponent } from './components/slidebar/slidebar-title/slidebar-title.component';
+import { SlidebarComponent } from './components/slidebar/slidebar/slidebar.component';
+import { SlidebarFooterComponent } from './components/slidebar/slidebar-footer/slidebar-footer.component';
+import { SlidebarDeleteComponent } from './components/slidebar/slidebar-delete/slidebar-delete.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -49,13 +48,12 @@ import { SlidebarDeleteCardComponent } from './components/slidebar-delete-card/s
     PlayPageComponent,
     SlidebarComponent,
     EditTopicPageComponent,
-    SlidebarRenameTopicComponent,
     SlidebarFooterComponent,
-    SlidebarDeleteTopicComponent,
     EditCardComponent,
     EditCardListComponent,
     EditCardPageComponent,
-    SlidebarDeleteCardComponent,
+    SlidebarTitleComponent,
+    SlidebarDeleteComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [],
