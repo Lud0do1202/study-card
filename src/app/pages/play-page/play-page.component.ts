@@ -24,7 +24,6 @@ export class PlayPageComponent implements OnInit {
   ngOnInit(): void {
     this.topic = this.router.data.topic!;
     this.cards = arrayShuffle(this.router.data.cards!);
-    console.log(this.cards);
   }
 
   /* ------------------------------ Show Answer ----------------------------- */
