@@ -5,4 +5,5 @@ export interface RouterData {
   topic?: Topic;
   card?: Card;
   cards?: Card[];
+  nbCards?: number;
 }

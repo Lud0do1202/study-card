@@ -32,6 +32,7 @@ import { TopicsPageComponent } from './pages/topics-page/topics-page.component';
 import { UserIdInterceptor } from './interceptors/user-id.interceptor';
 import { QuestionComponent } from './components/page/question/question.component';
 import { AnswerComponent } from './components/page/answer/answer.component';
+import { ResultPageComponent } from './pages/result-page/result-page.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -59,6 +60,7 @@ import { AnswerComponent } from './components/page/answer/answer.component';
     TopicsPageComponent,
     QuestionComponent,
     AnswerComponent,
+    ResultPageComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
   providers: [

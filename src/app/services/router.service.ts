@@ -38,9 +38,18 @@ export class RouterService {
   }
 
   /* ------------------------------- Play Page ------------------------------ */
-  playPage(topic: Topic): void {
+  playPage(topic: Topic, cards: Card[]): void {
     this.data.topic = topic;
+    this.data.cards = cards;
     this.router.navigateByUrl('/play');
+  }
+
+  /* ------------------------------ Result Page ----------------------------- */
+  resultPage(topic: Topic, wrongCards: Card[], nbCards: number): void {
+    this.data.topic = topic;
+    this.data.cards = wrongCards;
+    this.data.nbCards = nbCards;
+    this.router.navigateByUrl('/result');
   }
 
   /* --------------------------------- Error -------------------------------- */

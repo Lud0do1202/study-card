@@ -1,0 +1,28 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.question {
+  height: 50%;
+}
+
+.answer {
+  height: 25%;
+}
+
+.show-answer-button {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    font-size: var(--font-l);
+    background-color: var(--primary-color);
+    color: var(--onPrimary-color);
+    border-radius: var(--border-radius);
+    padding: 0.5em 0.65em;
+  }
+}

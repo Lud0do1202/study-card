@@ -1,3 +1,34 @@
-<p>play-page works!</p>
+<div class="play-page page" [ngClass]="topic.theme">
+  <!-- ------------------------------- Header -------------------------------- -->
+  <div class="header">
+    <app-title [text]="topic.topic"></app-title>
+  </div>
 
-<button routerLink="/topics">HOME</button>
+  <!-- ------------------------------- Body -------------------------------- -->
+  <div class="body">
+    <app-question class="question" [card]="cards[cardIndex]"></app-question>
+    <app-answer *ngIf="answerShowed === true" class="answer" [card]="cards[cardIndex]"></app-answer>
+
+    <!-- ----------------------- Show Answer Button ------------------------ -->
+    <div *ngIf="answerShowed === false" class="show-answer-button">
+      <div (click)="showAnswer()">Show answer</div>
+    </div>
+  </div>
+
+  <!-- ------------------------------ Footer ------------------------------- -->
+  <div class="footer">
+    <!-- -------------------------- Wrong Answer --------------------------- -->
+    <app-footer-button-icon
+      *ngIf="answerShowed === true"
+      icon="x-lg"
+      (onClick)="nextQuestion(false)"
+    ></app-footer-button-icon>
+
+    <!-- ------------------------- Correct Answer -------------------------- -->
+    <app-footer-button-icon
+      *ngIf="answerShowed === true"
+      icon="check-lg"
+      (onClick)="nextQuestion(true)"
+    ></app-footer-button-icon>
+  </div>
+</div>

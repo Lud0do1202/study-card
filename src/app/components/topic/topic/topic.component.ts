@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Topic } from 'src/app/interfaces/topic';
+import { CardService } from 'src/app/services/card.service';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
 import { Theme } from 'src/app/types/theme';
@@ -15,7 +16,7 @@ export class TopicComponent {
   theme!: Theme;
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private $topic$: TopicService, private router: RouterService) {}
+  constructor(private $topic$: TopicService, private router: RouterService, private $card$: CardService) {}
 
   /* ------------------------------ Change Color ------------------------------ */
   onChangeColor(theme: Theme): void {
@@ -31,11 +32,14 @@ export class TopicComponent {
   /* -------------------------------- Router -------------------------------- */
   // Play
   play(): void {
-    this.router.playPage(this.topic, );
+    this.$card$.getAll(this.topic.id).subscribe({
+      next: (cards) => this.router.playPage(this.topic, cards),
+      error: () => this.router.error(),
+    });
   }
 
   // Edit
   edit(): void {
-    this.router.editTopicPage( this.topic);
+    this.router.editTopicPage(this.topic);
   }
 }

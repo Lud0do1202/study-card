@@ -37,18 +37,6 @@ CREATE TABLE `cards` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `card_images`
---
-
-CREATE TABLE `card_images` (
-  `id` int(11) NOT NULL,
-  `id_card` int(11) NOT NULL,
-  `ext` varchar(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `topics`
 --
 
@@ -57,17 +45,6 @@ CREATE TABLE `topics` (
   `id_user` varchar(256) NOT NULL,
   `topic` varchar(32) NOT NULL,
   `theme` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `topic_cards`
---
-
-CREATE TABLE `topic_cards` (
-  `id_topic` int(11) NOT NULL,
-  `id_card` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -92,25 +69,11 @@ ALTER TABLE `cards`
   ADD KEY `fk__cards__topic` (`id_topic`);
 
 --
--- Index pour la table `card_images`
---
-ALTER TABLE `card_images`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__card_images__card` (`id_card`);
-
---
 -- Index pour la table `topics`
 --
 ALTER TABLE `topics`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk__topics__user` (`id_user`);
-
---
--- Index pour la table `topic_cards`
---
-ALTER TABLE `topic_cards`
-  ADD PRIMARY KEY (`id_topic`,`id_card`),
-  ADD KEY `fk__topic_cards__card` (`id_card`);
 
 --
 -- Index pour la table `users`
@@ -126,12 +89,6 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `card_images`
---
-ALTER TABLE `card_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -151,24 +108,10 @@ ALTER TABLE `cards`
   ADD CONSTRAINT `fk__cards__topic` FOREIGN KEY (`id_topic`) REFERENCES `topics` (`id`);
 
 --
--- Contraintes pour la table `card_images`
---
-ALTER TABLE `card_images`
-  ADD CONSTRAINT `fk__card_images__card` FOREIGN KEY (`id_card`) REFERENCES `cards` (`id`);
-
---
 -- Contraintes pour la table `topics`
 --
 ALTER TABLE `topics`
   ADD CONSTRAINT `fk__topics__user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
-
---
--- Contraintes pour la table `topic_cards`
---
-ALTER TABLE `topic_cards`
-  ADD CONSTRAINT `fk__topic_cards__card` FOREIGN KEY (`id_card`) REFERENCES `cards` (`id`),
-  ADD CONSTRAINT `fk__topic_cards__topic` FOREIGN KEY (`id_topic`) REFERENCES `topics` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
