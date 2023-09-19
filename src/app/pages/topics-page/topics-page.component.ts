@@ -3,6 +3,7 @@ import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-topics-page',
@@ -16,13 +17,25 @@ export class TopicsPageComponent implements OnInit {
   topicsFiltered!: Topic[];
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private router: RouterService, private $topic$: TopicService, private removeAccent: RemoveAccentsPipe) {}
+  constructor(
+    private router: RouterService,
+    private $topic$: TopicService,
+    private removeAccent: RemoveAccentsPipe,
+    private loader: NgxSpinnerService
+  ) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
+    // Loader
+    this.loader.show();
+
     // Get the topics
     this.$topic$.getAll().subscribe({
       next: (topics: Topic[]) => {
+        // Loader
+        this.loader.hide();
+
+        // Topics
         this.topics = topics;
         this.topicsFiltered = topics;
       },
@@ -47,6 +60,10 @@ export class TopicsPageComponent implements OnInit {
 
   /* ------------------------------- New Topic ------------------------------ */
   newTopic(): void {
+    // Loader
+    this.loader.show();
+
+    // Topic
     const defaultTopic: Topic = {
       id: 0,
       topic: 'New Topic',
@@ -54,7 +71,12 @@ export class TopicsPageComponent implements OnInit {
     };
 
     this.$topic$.insert(defaultTopic).subscribe({
-      next: (topic: Topic) => this.router.editTopicPage(topic),
+      next: (topic: Topic) => {
+        // Loader
+        this.loader.hide();
+
+        this.router.editTopicPage(topic);
+      },
       error: () => this.router.error(),
     });
   }

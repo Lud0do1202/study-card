@@ -39,10 +39,16 @@ export class PlayPageComponent implements OnInit {
     else this.wrongAnswers.push(this.cards[this.cardIndex]);
 
     // No more cards
-    if (this.cardIndex + 1 === this.cards.length) this.router.resultPage(this.topic, this.correctAnswers, this.wrongAnswers);
+    if (this.cardIndex + 1 === this.cards.length)
+      this.router.resultPage(this.topic, this.correctAnswers, this.wrongAnswers);
 
     // Next card
     this.cardIndex++;
     this.answerShowed = false;
+  }
+
+  /* ------------------------------ Topics Page ----------------------------- */
+  goToTopicsPage(): void {
+    this.router.topicsPage();
   }
 }

@@ -17,6 +17,13 @@
 
   <!-- ------------------------------ Footer ------------------------------- -->
   <div class="footer">
+    <!-- ------------------------------ Home ------------------------------- -->
+    <app-footer-button-icon
+      *ngIf="answerShowed === false"
+      icon="house"
+      (onClick)="goToTopicsPage()"
+    ></app-footer-button-icon>
+
     <!-- -------------------------- Wrong Answer --------------------------- -->
     <app-footer-button-icon
       *ngIf="answerShowed === true"

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Topic } from 'src/app/interfaces/topic';
 import { CardService } from 'src/app/services/card.service';
 import { RouterService } from 'src/app/services/router.service';
@@ -16,7 +17,12 @@ export class TopicComponent {
   theme!: Theme;
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private $topic$: TopicService, private router: RouterService, private $card$: CardService) {}
+  constructor(
+    private $topic$: TopicService,
+    private router: RouterService,
+    private $card$: CardService,
+    private loader: NgxSpinnerService
+  ) {}
 
   /* ------------------------------ Change Color ------------------------------ */
   onChangeColor(theme: Theme): void {
@@ -32,10 +38,17 @@ export class TopicComponent {
   /* -------------------------------- Router -------------------------------- */
   // Play
   play(): void {
+    // Loader
+    this.loader.show();
+
+    // Get cards
     this.$card$.getAll(this.topic.id).subscribe({
       next: (cards) => {
+        // Loader
+        this.loader.hide();
+
         // Cancel if no cards
-        if(cards.length === 0) return;
+        if (cards.length === 0) return;
 
         // Play page
         this.router.playPage(this.topic, cards);

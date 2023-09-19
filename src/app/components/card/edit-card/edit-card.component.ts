@@ -15,6 +15,6 @@ export class EditCardComponent {
   constructor(private router: RouterService) {}
 
   editCard(): void {
-    this.router.editCardPage(this.topic, this.card );
+    this.router.editCardPage(this.topic, this.card);
   }
 }

@@ -2,6 +2,7 @@
   width: 100%;
   margin-top: 1em;
 
+  /* ------------------------------- Question ------------------------------- */
   .edit-question {
     text-align: center;
     display: flex;
@@ -15,6 +16,7 @@
     width: 100%;
   }
 
+  /* ----------------------------- .edit-answer ----------------------------- */
   .edit-answer {
     margin-left: auto;
     background-color: var(--primaryContainer-color);

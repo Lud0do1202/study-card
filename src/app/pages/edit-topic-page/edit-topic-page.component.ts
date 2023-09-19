@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
 import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
@@ -25,11 +26,15 @@ export class EditTopicPageComponent implements OnInit {
     private router: RouterService,
     private $topic$: TopicService,
     private $card$: CardService,
-    private removeAccent: RemoveAccentsPipe
+    private removeAccent: RemoveAccentsPipe,
+    private loader: NgxSpinnerService
   ) {}
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
+    // Loader
+    this.loader.show();
+
     // Get topic
     this.topic = this.router.data.topic!;
 
@@ -39,6 +44,10 @@ export class EditTopicPageComponent implements OnInit {
     // Get the cards
     this.$card$.getAll(this.topic.id).subscribe({
       next: (cards) => {
+        // Loader
+        this.loader.hide();
+
+        // Cards
         this.cards = cards;
         this.cardsFiltered = cards;
       },
@@ -91,8 +100,15 @@ export class EditTopicPageComponent implements OnInit {
 
     // YES
     else {
+      // Show
+      this.loader.show();
+
+      // Delete
       this.$topic$.delete(this.topic.id).subscribe({
-        next: () => this.router.topicsPage(),
+        next: () => {
+          this.loader.hide();
+          this.router.topicsPage();
+        },
         error: () => this.router.error(),
       });
     }

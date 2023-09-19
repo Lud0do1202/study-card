@@ -1,5 +1,1 @@
-- Animation of show answer
-
-- LOADER
- * https://www.npmjs.com/package/ngx-spinner
- * <ngx-spinner bdColor = "rgba(255,0,0,0.8)" size = "large" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"></ngx-spinner>
+- error page

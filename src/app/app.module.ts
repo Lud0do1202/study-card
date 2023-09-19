@@ -1,5 +1,5 @@
 /* --------------------------------- Module --------------------------------- */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,7 @@ import { NgxColorsModule } from 'ngx-colors';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 /* -------------------------------- Component ------------------------------- */
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { UserIdInterceptor } from './interceptors/user-id.interceptor';
 import { QuestionComponent } from './components/page/question/question.component';
 import { AnswerComponent } from './components/page/answer/answer.component';
 import { ResultPageComponent } from './pages/result-page/result-page.component';
+import { LoaderComponent } from './components/page/loader/loader.component';
 
 /* ------------------------------------ - ----------------------------------- */
 @NgModule({
@@ -62,6 +64,7 @@ import { ResultPageComponent } from './pages/result-page/result-page.component';
     QuestionComponent,
     AnswerComponent,
     ResultPageComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { ResultPageComponent } from './pages/result-page/result-page.component';
     HttpClientModule,
     NgxColorsModule,
     RoundProgressModule,
+    NgxSpinnerModule,
   ],
   providers: [
     {
@@ -80,5 +84,6 @@ import { ResultPageComponent } from './pages/result-page/result-page.component';
     },
   ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
