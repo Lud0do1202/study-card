@@ -33,7 +33,13 @@ export class TopicComponent {
   // Play
   play(): void {
     this.$card$.getAll(this.topic.id).subscribe({
-      next: (cards) => this.router.playPage(this.topic, cards),
+      next: (cards) => {
+        // Cancel if no cards
+        if(cards.length === 0) return;
+
+        // Play page
+        this.router.playPage(this.topic, cards);
+      },
       error: () => this.router.error(),
     });
   }

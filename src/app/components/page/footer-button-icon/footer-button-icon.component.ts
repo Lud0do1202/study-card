@@ -7,8 +7,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FooterButtonIconComponent {
   /* ---------------------------------- Var --------------------------------- */
-  @Input() icon: string = 'app';
+  @Input() icon!: string | string[];
   @Output() onClick = new EventEmitter<void>();
+
+  getIcons(): string[] {
+    return typeof this.icon === 'string' ? [this.icon] : this.icon;
+  }
 
   /* --------------------------------- Click -------------------------------- */
   emitOnClick(): void {

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxColorsModule } from 'ngx-colors';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
 
 /* -------------------------------- Component ------------------------------- */
 import { AppComponent } from './app.component';
@@ -62,7 +63,15 @@ import { ResultPageComponent } from './pages/result-page/result-page.component';
     AnswerComponent,
     ResultPageComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule, NgxColorsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgxColorsModule,
+    RoundProgressModule,
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

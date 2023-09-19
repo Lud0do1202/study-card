@@ -15,6 +15,7 @@ export class PlayPageComponent implements OnInit {
   cards!: Card[];
   cardIndex: number = 0;
   answerShowed: boolean = false;
+  correctAnswers: Card[] = [];
   wrongAnswers: Card[] = [];
 
   /* ------------------------------ Constructor ----------------------------- */
@@ -34,11 +35,11 @@ export class PlayPageComponent implements OnInit {
   /* ----------------------------- Next Question ---------------------------- */
   nextQuestion(correctAnswer: boolean): void {
     // Increment Correct/wrong answer
-    if (correctAnswer === false) this.wrongAnswers.push(this.cards[this.cardIndex]);
+    if (correctAnswer === true) this.correctAnswers.push(this.cards[this.cardIndex]);
+    else this.wrongAnswers.push(this.cards[this.cardIndex]);
 
     // No more cards
-    if (this.cardIndex + 1 === this.cards.length)
-      this.router.resultPage(this.topic, this.wrongAnswers, this.cards.length);
+    if (this.cardIndex + 1 === this.cards.length) this.router.resultPage(this.topic, this.correctAnswers, this.wrongAnswers);
 
     // Next card
     this.cardIndex++;

@@ -5,5 +5,6 @@ export interface RouterData {
   topic?: Topic;
   card?: Card;
   cards?: Card[];
-  nbCards?: number;
+  correctAnswers?: Card[];
+  wrongAnswers?: Card[];
 }

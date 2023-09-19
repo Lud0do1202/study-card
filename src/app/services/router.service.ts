@@ -45,10 +45,10 @@ export class RouterService {
   }
 
   /* ------------------------------ Result Page ----------------------------- */
-  resultPage(topic: Topic, wrongCards: Card[], nbCards: number): void {
+  resultPage(topic: Topic, correctAnswers: Card[], wrongAnswers: Card[]): void {
     this.data.topic = topic;
-    this.data.cards = wrongCards;
-    this.data.nbCards = nbCards;
+    this.data.correctAnswers = correctAnswers;
+    this.data.wrongAnswers = wrongAnswers;
     this.router.navigateByUrl('/result');
   }
 
