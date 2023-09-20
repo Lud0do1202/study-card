@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'play', component: PlayPageComponent },
   { path: 'result', component: ResultPageComponent },
   { path: 'error', component: ErrorPageComponent },
+  { path: '**', redirectTo: '/landing' },
 ];
 
 @NgModule({

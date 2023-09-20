@@ -1,3 +1,11 @@
-<p>error-page works!</p>
-
-<button routerLink="">RESTART</button>
+<div class="error-page page pink-theme">
+  <div class="header"></div>
+  <div class="body">
+    <!-- ------------------------------ Error ------------------------------ -->
+    <div class="error-msg">Something wrong happened</div>
+  </div>
+  <div class="footer">
+    <!-- ------------------------------ Home ------------------------------- -->
+    <app-footer-button-icon icon="house" (onClick)="restartApp()"></app-footer-button-icon>
+  </div>
+</div>

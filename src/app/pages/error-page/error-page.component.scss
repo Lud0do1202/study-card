@@ -1,0 +1,13 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+
+  .error-msg {
+    text-align: center;
+    font-size: var(--font-xl);
+    font-weight: bold;
+  }
+}
