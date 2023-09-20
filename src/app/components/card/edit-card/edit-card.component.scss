@@ -5,19 +5,26 @@
   /* ------------------------------- Question ------------------------------- */
   .edit-question {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    resize: none;
+    overflow: hidden;
+    height: fit-content;
     background-color: var(--onPrimary-color);
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius) var(--border-radius) 0 var(--border-radius);
     padding: 0.4em 0.55em;
-    font-size: var(--font-s);
+    font-size: var(--font-xs);
     width: 100%;
   }
 
   /* ----------------------------- .edit-answer ----------------------------- */
   .edit-answer {
+    display: block;
+    resize: none;
+    overflow: hidden;
+    max-height: 100%;
     margin-left: auto;
     background-color: var(--primaryContainer-color);
     color: var(--onPrimaryContainer-color);
@@ -25,7 +32,7 @@
     border-top: none;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     padding: 0.4em 0.55em;
-    font-size: var(--font-s);
+    font-size: var(--font-xs);
     width: 80%;
   }
 }

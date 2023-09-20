@@ -1,7 +1,7 @@
 <div class="edit-card" (click)="editCard()">
   <!-- ---------------------------- Question ----------------------------- -->
-  <div class="edit-question">{{ card.question }}</div>
+  <textarea #cardInfos class="edit-question">{{ card.question }}</textarea>
 
   <!-- ----------------------------- Answer ------------------------------ -->
-  <div class="edit-answer">{{ card.answer }}</div>
+  <textarea #cardInfos class="edit-answer">{{ card.answer }}</textarea>
 </div>
