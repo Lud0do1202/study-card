@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
 import { RouterService } from 'src/app/services/router.service';
@@ -13,18 +13,37 @@ export class EditCardComponent implements AfterViewInit {
   @Input() topic!: Topic;
   @Input() card!: Card;
 
-  @ViewChildren('cardInfos') cardInfos!: ElementRef[];
+  @ViewChild('cardRef') cardRef!: ElementRef;
+  @ViewChild('questionRef') questionRef!: ElementRef;
+  @ViewChild('answerRef') answerRef!: ElementRef;
 
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private router: RouterService) {}
 
   /* ---------------------------- After View Init --------------------------- */
   ngAfterViewInit(): void {
-    for (let info of this.cardInfos) {
-      const infoElement = info.nativeElement as HTMLTextAreaElement;
-      infoElement.style.height = 'auto';
-      infoElement.style.height = infoElement.scrollHeight + 'px';
-    }
+    // Question
+    const questionHeight = this._setHeightTextarea(this.questionRef);
+
+    // Answer
+    const answerHeight = this._setHeightTextarea(this.answerRef);
+    this.answerRef.nativeElement.style.top = questionHeight + 'px';
+
+    // Card
+    this.cardRef.nativeElement.style.height = questionHeight + answerHeight + 'px';
+  }
+
+  /* -------------------------- Set Height Textarea ------------------------- */
+  private _setHeightTextarea(ref: ElementRef): number {
+    // Get element
+    const element = ref.nativeElement as HTMLTextAreaElement;
+
+    // Set height and set it
+    element.style.height = 'auto';
+    const height = element.scrollHeight;
+    element.style.height = height + 'px';
+
+    return height;
   }
 
   /* --------------------------------- Edit --------------------------------- */
