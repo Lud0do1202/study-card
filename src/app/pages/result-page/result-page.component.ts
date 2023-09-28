@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdOptions, AdMob, AdMobError, InterstitialAdPluginEvents } from '@capacitor-community/admob';
+import { AdOptions, AdMob, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Card } from 'src/app/interfaces/card';
 import { Topic } from 'src/app/interfaces/topic';
@@ -41,10 +41,7 @@ export class ResultPageComponent implements OnInit {
 
   /* --------------------------- Ads Interstitial --------------------------- */
   async interstitial(): Promise<void> {
-    const options: AdOptions = {
-      adId: 'ca-app-pub-9685712148717806~5806831262',
-      isTesting: true,
-    };
+    const options: AdOptions = { adId: 'ca-app-pub-9685712148717806/4216818934' };
     await AdMob.prepareInterstitial(options);
     await AdMob.showInterstitial();
   }

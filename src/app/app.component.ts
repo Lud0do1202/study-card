@@ -14,10 +14,6 @@ export class AppComponent implements OnInit {
 
   /* ------------------------------ Init AdMob ------------------------------ */
   async initAdsMob(): Promise<void> {
-    AdMob.initialize({
-      requestTrackingAuthorization: true,
-      testingDevices: ['TESTDEVICECODE'],
-      initializeForTesting: true,
-    });
+    AdMob.initialize({ requestTrackingAuthorization: true });
   }
 }
