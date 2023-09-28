@@ -107,7 +107,7 @@ export class EditTopicPageComponent implements OnInit {
       this.$topic$.delete(this.topic.id).subscribe({
         next: () => {
           this.loader.hide();
-          this.router.topicsPage();
+          this.router.topicsPage(false);
         },
         error: () => this.router.error(),
       });

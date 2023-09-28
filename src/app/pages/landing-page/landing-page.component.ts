@@ -30,6 +30,6 @@ export class LandingPageComponent implements OnInit {
 
   /* ---------------------------- Go To Home Page --------------------------- */
   goToTopicsPage(): void {
-    this.router.topicsPage();
+    this.router.topicsPage(false);
   }
 }

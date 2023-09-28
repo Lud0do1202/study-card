@@ -7,4 +7,5 @@ export interface RouterData {
   cards?: Card[];
   correctAnswers?: Card[];
   wrongAnswers?: Card[];
+  showAds?: boolean;
 }

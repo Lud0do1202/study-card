@@ -26,6 +26,7 @@ export class TopicsPageComponent implements OnInit {
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
+
     // Loader
     this.loader.show();
 

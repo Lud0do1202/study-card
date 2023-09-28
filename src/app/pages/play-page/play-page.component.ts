@@ -49,6 +49,6 @@ export class PlayPageComponent implements OnInit {
 
   /* ------------------------------ Topics Page ----------------------------- */
   goToTopicsPage(): void {
-    this.router.topicsPage();
+    this.router.topicsPage(true);
   }
 }

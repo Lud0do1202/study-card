@@ -20,7 +20,8 @@ export class RouterService {
   }
 
   /* ------------------------------ Topics Page ----------------------------- */
-  topicsPage(): void {
+  topicsPage(showAds: boolean): void {
+    this.data.showAds = showAds;
     this.router.navigateByUrl('/topics');
   }
 
