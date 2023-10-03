@@ -4,6 +4,7 @@ const api = 'http://localhost/HelloWorld/Lud0do1202/study-card-api';
 export const environment = {
   api: {
     auth: api + '/auth.php',
+    user: api + '/user.php',
     topic: api + '/topic.php',
     card: api + '/card.php',
   },

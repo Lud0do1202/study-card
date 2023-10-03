@@ -17,3 +17,11 @@
     display: none;
   }
 }
+
+/* --------------------------- Delete Account Icon -------------------------- */
+.delete-account-icon {
+  position: absolute;
+  bottom: 0.1em;
+  left: 0.5em;
+  font-size: var(--font-xs);
+}

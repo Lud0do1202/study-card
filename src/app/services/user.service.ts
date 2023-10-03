@@ -1,4 +1,4 @@
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -12,8 +12,12 @@ export class UserService {
   private _userID = 'userID';
 
   /* ------------------------------ Constructor ----------------------------- */
-  constructor(private handler: HttpBackend) {}
+  constructor(private handler: HttpBackend, private http : HttpClient) {}
 
+  /* ---------------------------- Delete Account ---------------------------- */
+  deleteAccount(): Observable<void> {
+    return this.http.delete<void>(environment.api.user);
+  }
   /* --------------------------------- Auth --------------------------------- */
   async auth(): Promise<Observable<void>> {
     // Get the device uuid

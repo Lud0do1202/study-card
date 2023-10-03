@@ -4,6 +4,8 @@ import { RemoveAccentsPipe } from 'src/app/pipes/remove-accents.pipe';
 import { RouterService } from 'src/app/services/router.service';
 import { TopicService } from 'src/app/services/topic.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { UserService } from 'src/app/services/user.service';
+import { App } from '@capacitor/app';
 
 @Component({
   selector: 'app-topics-page',
@@ -19,6 +21,7 @@ export class TopicsPageComponent implements OnInit {
   /* ------------------------------ Constructor ----------------------------- */
   constructor(
     private router: RouterService,
+    private $user$: UserService,
     private $topic$: TopicService,
     private removeAccent: RemoveAccentsPipe,
     private loader: NgxSpinnerService
@@ -26,7 +29,6 @@ export class TopicsPageComponent implements OnInit {
 
   /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
-
     // Loader
     this.loader.show();
 
@@ -80,5 +82,25 @@ export class TopicsPageComponent implements OnInit {
       },
       error: () => this.router.error(),
     });
+  }
+
+  /* ------------------------- Close Delete Slidebar ------------------------ */
+  onCloseDeleteSlidebar(state: 'cancel' | 'confirm'): void {
+    // NO
+    if (state === 'cancel') {
+      return;
+    }
+
+    // YES
+    else {
+      // Loader
+      this.loader.show();
+
+      // Delete
+      this.$user$.deleteAccount().subscribe({
+        next: () => App.exitApp(), // Quit app
+        error: () => this.router.error(),
+      });
+    }
   }
 }

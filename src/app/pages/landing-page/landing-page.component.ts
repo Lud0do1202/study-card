@@ -13,7 +13,6 @@ export class LandingPageComponent implements OnInit {
   /* ---------------------------------- Var --------------------------------- */
   @ViewChild('logoShrinking') logoShrinkingComponent!: LogoShrinkingComponent;
   showGoogleButton: boolean = true;
-  deviceID: string | null = null;
 
   /* ------------------------------ Constructor ----------------------------- */
   constructor(private $user$: UserService, private router: RouterService) {}
@@ -23,10 +22,7 @@ export class LandingPageComponent implements OnInit {
     // Auth
     this.$user$.auth().then((authObservable: Observable<void>) => {
       authObservable.subscribe({
-        next: () => {
-          this.deviceID = this.$user$.getUserID();
-          this.logoShrinkingComponent.startAnimation();
-        }, // Start animation
+        next: () => this.logoShrinkingComponent.startAnimation(), // Start animation
         error: () => this.router.error(), // ERROR
       });
     });

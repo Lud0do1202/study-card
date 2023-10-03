@@ -13,8 +13,17 @@
 
   <!-- ------------------------------ Footer ------------------------------- -->
   <div class="footer">
+    <app-footer-button-icon class="delete-account-icon" icon="person-x" (onClick)="deleteSlidebar.show()"></app-footer-button-icon>
     <app-footer-button-icon icon="plus-lg" (onClick)="newTopic()"></app-footer-button-icon>
   </div>
+
+  <!-- -------------------------- Delete Slidebar -------------------------- -->
+  <app-slidebar-delete
+    type="Account"
+    name="all of your datas in addition of your account"
+    (onClose)="onCloseDeleteSlidebar($event)"
+    #deleteSlidebar
+  ></app-slidebar-delete> 
 
   <!-- Loader -->
   <app-loader></app-loader>
