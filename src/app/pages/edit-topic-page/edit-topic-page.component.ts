@@ -119,8 +119,8 @@ export class EditTopicPageComponent implements OnInit {
     const newCard: Card = {
       id: 0,
       id_topic: this.topic.id,
-      question: 'Question ?',
-      answer: 'Answer',
+      question: '',
+      answer: '',
     };
 
     this.$card$.insert(newCard).subscribe({
