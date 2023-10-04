@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : ven. 15 sep. 2023 à 15:11
--- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.1.12
+-- Hôte : 127.0.0.1:3306
+-- Généré le : mer. 04 oct. 2023 à 15:30
+-- Version du serveur : 10.6.15-MariaDB-cll-lve
+-- Version de PHP : 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `study_card`
+-- Base de données : `u344772174_study_card`
 --
 
 -- --------------------------------------------------------
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
   `id_topic` int(11) NOT NULL,
-  `question` varchar(512) NOT NULL,
-  `answer` varchar(256) NOT NULL
+  `question` varchar(1024) NOT NULL,
+  `answer` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -43,7 +43,7 @@ CREATE TABLE `cards` (
 CREATE TABLE `topics` (
   `id` int(11) NOT NULL,
   `id_user` varchar(256) NOT NULL,
-  `topic` varchar(32) NOT NULL,
+  `topic` varchar(64) NOT NULL,
   `theme` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -112,6 +112,7 @@ ALTER TABLE `cards`
 --
 ALTER TABLE `topics`
   ADD CONSTRAINT `fk__topics__user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
